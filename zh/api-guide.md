@@ -24,7 +24,7 @@
 
 ```
 curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' \
--F 'audio=@sample.mp3' 
+-F 'audio=@sample.mp3' \
 -H 'Authorization: ${secretKey}'
 ```
 
