@@ -32,7 +32,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' 
 
 | 이름 | 타입 | 설명 |
 |---|---|---|
-| audio | multipart/form–data | 음성 파일 (.wav, .webm, .mp3, .ogg, .flac, .aac, .ac3) |
+| audio | multipart/form–data | 음성 파일 (WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
 
 #### 응답
 
