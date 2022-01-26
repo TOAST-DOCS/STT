@@ -23,11 +23,11 @@ Speech to Text service uses NHN Cloud's speech recognition and text synthesis te
 * 업로드 파일 지원 형식 : .wav, .webm, .mp3, .ogg, .flac, .aac, .ac3
 * 음성 파일 최대 시간 : 60초
 * 음성 입력 파일 권장 사항
-  * 파일 형식 : wav
-  * 비트 : 16bit
-  * 샘플레이트 : 1.6kHz
-  * 채널 수 : mono
-  * 음성 파일 시간 : 10초
+    * 파일 형식 : wav
+    * 비트 : 16bit
+    * 샘플레이트 : 1.6kHz
+    * 채널 수 : mono
+    * 음성 파일 시간 : 10초
 * 최대한 조용한 환경에서 녹음해 주시기 바랍니다.
 
 ## Service Targets
