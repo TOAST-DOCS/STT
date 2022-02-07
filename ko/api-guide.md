@@ -20,7 +20,7 @@
 
 [요청 본문]
 
-- 음성 파일의 Binary Data를 넣습니다.
+- 음성 파일의 바이너리 데이터를 넣습니다.
 
 ```
 curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' \
@@ -32,7 +32,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' 
 
 | 이름 | 타입 | 설명 |
 |---|---|---|
-| audio | multipart/form–data | 음성 파일 (WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
+| audio | multipart/form–data | 음성 파일(WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
 
 #### 응답
 
@@ -59,13 +59,13 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' 
 |---|---|---|
 | isSuccessful | Boolean | 분석 API 성공 여부 |
 | resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지(성공 시 success, 실패 시 오류 내용) |
+| resultMessage | String | 결과 메시지(성공 시 SUCCESS, 실패 시 오류 내용) |
 
 [필드]
 
 | 이름 | 타입 | 설명 |
 |---|---|---|
-| inputLength | Double | 인식된 음성 파일 길이 (단위: 초) |
+| inputLength | Double | 인식된 음성 파일 길이(단위: 초) |
 | fileType | String | 인식된 음성 파일 확장자 |
 | text | String | 인식된 음성의 텍스트 변환 결과 |
 | confidence | Double | 인식 결과 신뢰도 |
