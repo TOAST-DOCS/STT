@@ -1,21 +1,21 @@
-## AI Service > Speech to Text > 콘솔 사용 가이드
+## AI Service > Speech to Text > Console User Guide
 
-콘솔에서 음성 파일을 업로드하거나 녹음하여, 텍스트 변환 결과를 얻을 수 있습니다.
+You can upload or record a voice file from the console, and get the text conversion result.
 
-## 음성 인식
+## Speech Recognition
 
-### 텍스트 변환을 위한 음성 입력
+### Input Speech for Text Conversion
 
-- **음성 파일 업로드** 버튼을 누른 뒤 인식할 음성 파일을 선택하여 업로드할 수 있습니다.
-- **마이크 입력** 버튼을 누른 뒤 음성을 녹음하여 음성 파일을 생성할 수 있습니다.
-    - 녹음을 완료한 후, 원하는 대로 녹음되었는지 음성을 재생하여 확인해 볼 수 있습니다.
+- After clicking the **Voice File Upload** button, you can select a voice file to be recognized and upload it.
+- You can create a voice file by pressing the **Microphone Input** button and recording your voice.
+    - After you've finished recording, you can play the voice to make sure it's recorded the way you want it to.
 
-### 음성 인식
+### Recognize Speech
 
-파일 업로드나 음성 녹음을 완료한 뒤 **음성 인식** 버튼을 클릭하면 음성 파일의 내용을 인식하여 텍스트로 출력됩니다.
+If you click the **Recognize Speech** button after completing the file upload or voice recording, the content of the voice file is recognized and output as text.
 
-![STT](http://static.toastoven.net/prod_speech/stt_console_en.png)
+![STT](http://static.toastoven.net/prod_speech/stt_console_ko.png)
 
-### 파일 다운로드
+### Download a File
 
-* 원하는 파일 형식(JSON, TXT)을 선택한 후 **인식 결과 다운로드** 버튼을 눌러 음성 인식 결과를 파일로 다운로드할 수 있습니다.
+* After selecting the desired file format (JSON, TXT), you can download the speech recognition result as a file by clicking the **Download Recognition Result** button.

@@ -1,4 +1,4 @@
-## AI Service > Speech to Text > 릴리스 노트
+## AI Service > Speech to Text > Release Notes
 
-### 2022. 02. 22.
-* Speech to Text 서비스 출시
+### February 22, 2022
+* Speech to Text service released
