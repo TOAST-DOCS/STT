@@ -11,24 +11,24 @@ Speech to Text service uses NHN Cloud's speech recognition and text synthesis te
 * **Supports various types of voice input**
     * You can upload the voice to be recognized as a voice file.
     * You can record your voice with the microphone for voice input.
-    
+
 * **Support for downloading recognition results**
     * You can download JSON or TXT files.
     * You can download the speech recognition result file and modify it as necessary.
 
-## 음성 입력 가이드
+## Voice Input Guide
 
-보다 정확한 음성 인식을 위해 아래의 가이드를 참고하시기 바랍니다.
+For more accurate speech recognition, please refer to the following guide.
 
-* 업로드 파일 지원 형식: WAV, WebM, MP3, OGG, FLAC, AAC, AC3
-* 음성 파일 최대 시간: 60초
-* 권장 사항
-    * 파일 형식: WAV
-    * 비트: 16bit
-    * 샘플 레이트: 1.6kHz
-    * 채널 수: 모노(mono)
-    * 음성 파일 시간: 10초
-* 최대한 조용한 환경에서 녹음해 주시기 바랍니다.
+* Supported file formats for uploading: WAV, WebM, MP3, OGG, FLAC, AAC, AC3
+* Maximum duration of voice file: 60 seconds
+* Recommendations
+    * File format: WAV
+    * Bit: 16bit
+    * Sample rate: 1.6 kHz
+    * Number of channels: Mono
+    * Voice file duration: 10 seconds
+* Please record in an environment that is as quiet as possible.
 
 ## Service Targets
 * When it is necessary to build a feature to automatically dictate voice (customer center consultation, subtitle creation, etc.)

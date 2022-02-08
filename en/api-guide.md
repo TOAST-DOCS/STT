@@ -1,26 +1,26 @@
-## AI Service > Speech to Text > API 가이드
+## AI Service > Speech to Text > API Guide
 
-### 음성 인식 API
+### Speech Recognition API
 
-#### 요청
+#### Request
 
-- {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인이 가능합니다.
+- You can check the {appKey} and {secretKey} in the **URL & Appkey** menu at the top of the console.
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | POST | https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
 
-[요청 헤더]
+[Request Header]
 
-| 이름 | 값 | 설명 |
+| Name | Value | Description |
 |---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+| Authorization | {secretKey} | Security key issued from the console |
 
-[요청 본문]
+[Request Body]
 
-- 음성 파일의 바이너리 데이터를 넣습니다.
+- Input the binary data of the voice file.
 
 ```
 curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' \
@@ -28,15 +28,15 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' 
 -H 'Authorization: ${secretKey}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| audio | multipart/form–data | 음성 파일(WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
+| audio | multipart/form–data | Voice file (WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 ```
 {
     "header": {
@@ -47,25 +47,25 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' 
     "result": {
         "inputLength": 1.85,
         "fileType": "mp3",
-        "text": "안녕하세요.",
+        "text": "Hello.",
         "confidence": 0.94
     }
 }
 ```
 
-[헤더]
+[Header]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| isSuccessful | Boolean | 분석 API 성공 여부 |
-| resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지(성공 시 SUCCESS, 실패 시 오류 내용) |
+| isSuccessful | Boolean | Analysis API successful or not |
+| resultCode | Integer | Result code |
+| resultMessage | String | Result message (SUCCESS on success, error details on failure) |
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| inputLength | Double | 인식된 음성 파일 길이(단위: 초) |
-| fileType | String | 인식된 음성 파일 타입 |
-| text | String | 인식된 음성의 텍스트 변환 결과 |
-| confidence | Double | 인식 결과 신뢰도 |
+| inputLength | Double | Recognized voice file duration (unit: seconds) |
+| fileType | String | Recognized voice file type |
+| text | String | Text conversion result of recognized speech |
+| confidence | Double | Recognition result confidence |
