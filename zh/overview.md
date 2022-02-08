@@ -21,6 +21,7 @@ Speech to Text service uses NHN Cloud's speech recognition and text synthesis te
 For more accurate speech recognition, please refer to the following guide.
 
 * Supported file formats for uploading: WAV, WebM, MP3, OGG, FLAC, AAC, AC3
+* Maximum size: 3MB
 * Maximum duration of voice file: 60 seconds
 * Recommendations
   * File format: WAV
