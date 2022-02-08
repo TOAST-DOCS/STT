@@ -14,7 +14,7 @@ You can upload or record a voice file from the console, and get the text convers
 
 If you click the **Recognize Speech** button after completing the file upload or voice recording, the content of the voice file is recognized and output as text.
 
-![STT](http://static.toastoven.net/prod_speech/stt_console_ko.png)
+![STT](http://static.toastoven.net/prod_speech/stt_console_en.png)
 
 ### Download a File
 
