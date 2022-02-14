@@ -20,7 +20,7 @@ Speech to TextはNHN Cloudの音声認識および文字合成技術を利用し
 
 より正確な音声認識のために以下のガイドを参照してください。
 
-* アップロード音声ファイルサポート形式: WAV、WebM、MP3、OGG、FLAC、AAC、AC3
+* 音声ファイルアップロードのサポート形式: WAV、WebM、MP3、OGG、FLAC、AAC、AC3
 * 最大容量：3MB
 * 音声ファイル最大時間：60秒
 * 推奨事項

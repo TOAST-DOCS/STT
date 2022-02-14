@@ -20,7 +20,7 @@ Speech to Text는 NHN Cloud의 음성 인식 및 문자 합성 기술을 통해,
 
 보다 정확한 음성 인식을 위해 아래의 가이드를 참고하시기 바랍니다.
 
-* 업로드 음성 파일 지원 형식: WAV, WebM, MP3, OGG, FLAC, AAC, AC3
+* 음성 파일 업로드 지원 형식: WAV, WebM, MP3, OGG, FLAC, AAC, AC3
 * 최대 용량: 3MB
 * 음성 파일 최대 시간: 60초
 * 권장 사항
