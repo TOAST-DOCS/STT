@@ -22,7 +22,7 @@ For more accurate speech recognition, please refer to the following guide.
 
 * Supported formats for voice file upload: WAV, WebM, MP3, OGG, FLAC, AAC, AC3
 * Maximum size: 3MB
-* Maximum duration of voice file: 60 seconds
+* Supported duration for voice file recognition: minimum 0.36 seconds, maximum 60 seconds
 * Recommendations
     * File format: WAV
     * Bit: 16bit
