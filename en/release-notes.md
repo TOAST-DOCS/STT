@@ -1,5 +1,8 @@
 ## AI Service > Speech to Text > Release Notes
 
+### 2022.12.27
+* 연령별 음성 인식 개선
+
 ### October 4, 2022
 * Improved the performance of post processing
     * Improved alphanumeric conversion
