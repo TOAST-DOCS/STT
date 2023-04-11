@@ -1,6 +1,6 @@
 ## AI Service > Speech to Text > Overview
 
-Speech to Text service uses NHN Cloud's speech recognition and text synthesis technology to recognize input voice and convert the recognized voice into text. It can be applied to various fields that require conversion of voice into text such as voice dictation, device control through voice, and voice chatbot service.
+Speech to Text(STT) service uses NHN Cloud's speech recognition and text synthesis technology to recognize input voice and convert the recognized voice into text. It can be applied to various fields that require conversion of voice into text such as voice dictation, device control through voice, and voice chatbot service.
 
 ## Main Features
 
