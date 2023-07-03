@@ -26,7 +26,7 @@ For more accurate speech recognition, please refer to the following guide.
 * Recommendations
     * File format: WAV
     * Bit: 16bit
-    * Sample rate: 1.6 kHz
+    * Sample rate: 16 kHz
     * Number of channels: Mono
     * Voice file duration: 10 seconds
 * Please record in an environment that is as quiet as possible.
