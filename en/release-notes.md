@@ -1,5 +1,10 @@
 ## AI Service > Speech to Text > Release Notes
 
+### October 31, 2023
+
+* Bug Fixes
+    * Modified to receive results as an error if there is no voice recorded in the audio file
+
 ### February 28, 2023
 
 * Improved the console UI
