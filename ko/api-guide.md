@@ -118,7 +118,7 @@ public class NhnCloudMicWebSocketClient {
         var info = new DataLine.Info(TargetDataLine.class, audioFormat);
 
         if (!AudioSystem.isLineSupported(info)) {
-            log.info("Audio line is not supported");
+            System.out.println("Audio line is not supported");
             System.exit(1);
         }
 
@@ -136,7 +136,7 @@ public class NhnCloudMicWebSocketClient {
             targetDataLine.open(audioFormat, targetDataLine.getBufferSize());
             targetDataLine.start();
 
-            log.info("Mic recording...");
+            System.out.println("Mic recording...");
 
             var chunkSize = (int)(audioFormat.getSampleRate() * 0.02);
             var buffer = new byte[chunkSize];
