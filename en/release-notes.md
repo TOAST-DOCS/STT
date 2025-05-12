@@ -1,5 +1,9 @@
 ## AI Service > Speech to Text > Release Notes
 
+### May 13, 2025
+
+* Improved the performance of speech recognition
+
 ### October 31, 2023
 
 * Bug Fixes
