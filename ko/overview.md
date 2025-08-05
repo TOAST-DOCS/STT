@@ -22,7 +22,7 @@ Speech to Text(STT)는 NHN Cloud의 음성 인식 및 문자 합성 기술을 �
 
 ### 공통 권장 사항
 
-* 지원 파일 형식: WAV, MP3, WebM, OGG, FLAC, AAC, AC3, MP4 (일부 MP4는 인식이 불가할 수 있습니다)
+* 지원 파일 형식: WAV, MP3, WebM, OGG, FLAC, AAC, AC3
 * 권장 사항
     * 파일 형식: WAV
     * 비트: 16bit
