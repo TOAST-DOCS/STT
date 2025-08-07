@@ -121,14 +121,9 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | inputLength | Double | 인식된 음성 파일 길이(단위: 초) |
 | fileType | String | 인식된 음성 파일 타입 |
 | text | String[] | 인식된 음성의 텍스트 변환 결과 |
-| timeslot | Timeslot[] | 동일 인덱스의 텍스트가 인식된 구간 정보 |
-
-[Timeslot]
-
-| 이름 | 타입 | 설명 |
-|---|---|---|
-| startTime | Long | 구간 시작 시간(millisecond) |
-| endTime | Long | 구간의 종료 시간(millisecond) |
+| timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
+| timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
+| timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
 
 
 ## 음성 인식 API (비동기)
@@ -243,15 +238,9 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | inputLength | Double | 인식된 음성 파일 길이(단위: 초) |
 | fileType | String | 인식된 음성 파일 타입 |
 | text | String[] | 인식된 음성의 텍스트 변환 결과 |
-| timeslot | Timeslot[] | 동일 인덱스의 텍스트가 인식된 구간 정보 |
-
-[Timeslot]
-
-| 이름 | 타입 | 설명 |
-|---|---|---|
-| startTime | Long | 구간 시작 시간(millisecond) |
-| endTime | Long | 구간의 종료 시간(millisecond) |
-
+| timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
+| timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
+| timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
 
 ### 재시도
 - 실패한 작업의 재시도를 요청합니다.
