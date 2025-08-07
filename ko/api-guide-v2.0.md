@@ -1,7 +1,7 @@
 ## AI Service > Speech to Text > API 가이드
 
-더 풍부한 음성 인식 결과를 제공하기 위해 STT API v2.0을 출시하였습니다.
-이번 버전에서는 기존 응답 구조를 대폭 개선하여, 다양한 후처리와 사용자 경험 개선에 필요한 정보를 더 정교하게 제공합니다.
+STT API v2.0은 더욱 풍부한 음성 인식 결과를 제공합니다.
+STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한 후처리와 사용자 경험 개선에 필요한 정보를 더 정교하게 제공합니다.
 
 ## API 공통 정보
 
@@ -19,7 +19,7 @@
 
 | 이름 | 값 | 설명 |
 |---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 비밀 키 |
+| Authorization | {secretKey} | 콘솔에서 발급한 비밀 키 |
 
 ### 응답 공통 정보
 
@@ -127,5 +127,5 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 | 이름 | 타입 | 설명 |
 |---|---|---|
-| startTime | Long | 구간 시작시간(millisecond) |
-| endTime | Long | 구간의 종료시간(millisecond) |
+| startTime | Long | 구간 시작 시간(millisecond) |
+| endTime | Long | 구간의 종료 시간(millisecond) |
