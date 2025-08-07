@@ -161,6 +161,8 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 [Result]
 
+| 이름 | 타입 | 설명 |
+|---|---|---|
 | inputLength | Double | 인식된 음성 파일 길이(단위: 초) |
 | fileType | String | 인식된 음성 파일 타입 |
 | text | String[] | 인식된 음성의 텍스트 변환 결과 |
