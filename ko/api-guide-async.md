@@ -16,7 +16,7 @@
 
 | 이름 | 값 | 설명 |
 |---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 비밀 키 |
+| Authorization | {secretKey} | 콘솔에서 발급한 비밀 키 |
 
 ### 응답 공통 정보
 
@@ -82,7 +82,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 이름       | 타입       | 필수 여부 | 설명                                                                                                           |
 |----------|----------|-------|--------------------------------------------------------------------------------------------------------------|
-| audioUrl | String   | 필수    | 최대 20메가 크기의 다운로드 가능한 음성파일 URL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                        |
+| audioUrl | String   | 필수    | 최대 150MB 크기의 다운로드 가능한 음성 파일 URL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                        |
 | biasingList   | String[] | 비필수   | 특정 단어나 구절을 우선적으로 인식하거나 치환하도록 돕는 파라미터. 예상되는 오인식 결과를 정정하거나, 특정 키워드를 강화하고자 할 때 사용. 각 항목은 **"정답_모델인식값"** 형태로 구성. |
 
 #### 응답
@@ -157,7 +157,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |---|---|---|
 | taskId | String   | 상태 조회를 요청한 작업 UUID |
 | taskStatus | String   | 작업의 현재 상태(PENDING, IN_PROGRESS, COMPLETED, FAILED) |
-| result | Result   | 작업의 상태가 COMPLETED 일 경우 결과값 |
+| result | Result   | 작업의 상태가 COMPLETED일 경우 결과값 |
 
 [Result]
 
@@ -170,8 +170,8 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 이름 | 타입 | 설명 |
 |---|---|---|
-| startTime | Long | 구간 시작시간(millisecond) |
-| endTime | Long | 구간의 종료시간(millisecond) |
+| startTime | Long | 구간 시작 시간(millisecond) |
+| endTime | Long | 구간의 종료 시간(millisecond) |
 
 
 ### 재시도
