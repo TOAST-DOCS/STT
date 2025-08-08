@@ -190,7 +190,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                             |
 |---|---------------------------------------------------------------------------------|
-| POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
+| GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [필드]
 
@@ -257,7 +257,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                             |
 |---|---------------------------------------------------------------------------------|
-| POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
+| GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [필드]
 
