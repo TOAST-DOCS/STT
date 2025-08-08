@@ -109,7 +109,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
                 "endTime": "12090"
             },
         ],
-		"timeslot": [
+		"confidence": [
 			0
 		]
     }
@@ -223,7 +223,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
                 "endTime": "12090"
             }
         ],
-		"timeslot": [
+		"confidence": [
 			0
 		]
     }
