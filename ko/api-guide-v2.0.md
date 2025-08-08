@@ -124,6 +124,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
 | timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
 | timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
+| confidence | Double[] | 동일 인덱스의 텍스트가 인식된 결과의 신뢰도 |
 
 
 ## 음성 인식 API (비동기)
@@ -241,6 +242,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
 | timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
 | timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
+| confidence | Double[] | 동일 인덱스의 텍스트가 인식된 결과의 신뢰도 |
 
 ### 재시도
 - 실패한 작업의 재시도를 요청합니다.
