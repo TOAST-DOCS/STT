@@ -1,5 +1,7 @@
 ## AI Service > Speech to Text > Error Code
 
+Codes not specified below follow the [Gateway error codes in API Gateway](https://docs.nhncloud.com/ko/Application%20Service/API%20Gateway/ko/error-code/) and HTTP Response Status Code (RFC9110).
+
 | resultCode | resultKey | resultMessage |
 |---|---|----|
 | 0 | SUCCESS | Success |
