@@ -23,6 +23,7 @@
 | 4010003 | NOT_ALLOWED_USER | Not allowed user. |
 | 4010004 | INVALID_PROJECT | Invalid project.  |
 | 4010005 | UNAUTHORIZED_ROLE | Unauthorized role.  |
+| 4131000 | MAX_UPLOAD_SIZE_EXCEEDED | Request size is larger than permissible limit. the permissible limit is 10mb. |
 | 5000001 | INTERNAL_API_FAIL | Internal Api fail.  |
 | 5000002 | ERROR_PARSING_FAIL | Error parsing fail. |
 | 5000003 | DATABASE_FAIL | Database server error. |
