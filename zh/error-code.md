@@ -1,6 +1,6 @@
 ## AI Service > Speech to Text > Error Code
 
-Codes not specified below follow the [Gateway error codes in API Gateway](https://docs.nhncloud.com/ko/Application%20Service/API%20Gateway/ko/error-code/) and HTTP Response Status Code (RFC9110).
+Codes not specified below follow the [Gateway error codes in API Gateway](https://docs.nhncloud.com/zh/Application%20Service/API%20Gateway/zh/error-code/) and HTTP Response Status Code (RFC9110).
 
 | resultCode | resultKey | resultMessage |
 |---|---|----|
@@ -25,7 +25,6 @@ Codes not specified below follow the [Gateway error codes in API Gateway](https:
 | 4010003 | NOT_ALLOWED_USER | Not allowed user. |
 | 4010004 | INVALID_PROJECT | Invalid project.  |
 | 4010005 | UNAUTHORIZED_ROLE | Unauthorized role.  |
-| 4131000 | MAX_UPLOAD_SIZE_EXCEEDED | Request size is larger than permissible limit. the permissible limit is 10mb. |
 | 5000001 | INTERNAL_API_FAIL | Internal Api fail.  |
 | 5000002 | ERROR_PARSING_FAIL | Error parsing fail. |
 | 5000003 | DATABASE_FAIL | Database server error. |
