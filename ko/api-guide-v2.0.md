@@ -108,7 +108,10 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
                 "startTime": "390",
                 "endTime": "12090"
             },
-        ]
+        ],
+		"confidence": [
+			0
+		]
     }
 }
 ```
@@ -124,6 +127,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
 | timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
 | timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
+| confidence | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도 |
 
 
 ## 음성 인식 API (비동기)
@@ -186,7 +190,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                             |
 |---|---------------------------------------------------------------------------------|
-| POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
+| GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [필드]
 
@@ -211,14 +215,17 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
         "inputLength": 220.0,
         "fileType": "mp3float",
         "text": [
-            "비타민 한국어 사",
+            "예시 응답 텍스트입니다",
         ],
         "timeslot": [
             {
                 "startTime": "390",
                 "endTime": "12090"
             }
-        ]
+        ],
+		"confidence": [
+			0
+		]
     }
 }
 ```
@@ -241,6 +248,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
 | timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
 | timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
+| confidence | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도 |
 
 ### 재시도
 - 실패한 작업의 재시도를 요청합니다.
@@ -249,7 +257,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                             |
 |---|---------------------------------------------------------------------------------|
-| POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
+| GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [필드]
 
