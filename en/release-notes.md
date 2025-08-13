@@ -1,5 +1,13 @@
 ## AI Service > Speech to Text > Release Notes
 
+### August 14, 2025
+
+#### Added Features
+
+* API v2.0 launched
+* Asynchronous API launched
+* Added the parameter for the user word list
+
 ### May 13, 2025
 
 * Improved the performance of speech recognition
