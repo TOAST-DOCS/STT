@@ -20,9 +20,9 @@ Speech to Text(STT) service uses NHN Cloud's speech recognition and text synthes
 
 For more accurate speech recognition, please refer to the following guide.
 
-* Supported formats for voice file upload: WAV, WebM, MP3, OGG, FLAC, AAC, AC3
-* Maximum size: 3MB
-* Supported duration for voice file recognition: minimum 0.36 seconds, maximum 60 seconds
+### Common recommendations
+
+* Supported file type: WAV, MP3, WebM, OGG, FLAC, AAC, AC3
 * Recommendations
     * File format: WAV
     * Bit: 16bit
@@ -30,6 +30,18 @@ For more accurate speech recognition, please refer to the following guide.
     * Number of channels: Mono
     * Voice file duration: 10 seconds
 * Please record in an environment that is as quiet as possible.
+
+### Synchronous API
+
+* Maximum capacity: 10MB
+* Recognition time for the voice file: minimum 0.36 seconds, maximum 150 seconds
+* It is suitable for the case where a quick response is required for a short speech.
+
+### Asynchronous API
+
+* Maximum capacity: 150MB
+* Recognition time for the voice file: minimum 0.36 seconds, maximum 3,600 seconds (1 hour)
+* It is suitable for processing long speeches or large files. The results are returned asynchronously.
 
 ## Service Targets
 * When it is necessary to build a feature to automatically dictate voice (customer center consultation, subtitle creation, etc.)
