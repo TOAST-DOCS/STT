@@ -1,5 +1,7 @@
 ## AI Service > Speech to Text > 오류 코드
 
+아래에 명시되지 않은 코드는 [API Gateway의 Gateway 오류 코드](https://docs.nhncloud.com/ko/Application%20Service/API%20Gateway/ko/error-code/)와 HTTP Response Status Code (RFC9110)를 따릅니다.
+
 | resultCode | resultKey | resultMessage |
 |---|---|----|
 | 0 | SUCCESS | Success |
