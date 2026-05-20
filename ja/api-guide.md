@@ -4,7 +4,9 @@
 
 #### リクエスト
 
-- {appKey}と{secretKey}はコンソール上部の**URL & Appkey**メニューで確認できます。
+* STT APIを使用するにはAppkeyまたはプロジェクト統合Appkeyが必要です。<br/>
+  Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、プロジェクト統合Appkeyは、NHN Cloudの1つのプロジェクト内の複数のサービスに対して共通で使用できる認証キーです。<br/>
+  Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。プロジェクト統合Appkeyの作成及び使用に関する詳細は、[プロジェクト統合Appkey](/nhncloud/ja/public-api/project-integrated-appkey)を参照してください。
 
 [URI]
 

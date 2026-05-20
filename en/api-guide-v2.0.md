@@ -7,8 +7,9 @@ STT API v2.0 significantly improves the response structure of previous verions, 
 
 ### Preliminary preparation
 
-- You need {appKey} and {secretKey} to use API
-- You can check {appKey} and {secretKey} from **URL & Appkey** menu at the top of the console.
+* An AppKey or a Project Integrated Appkey is required to use the STT API.<br/>
+  An AppKey is a unique authentication key issued for each individual NHN Cloud service, while a Project Integrated Appkey is a common authentication key that can be shared across multiple services within a single NHN Cloud project.<br/>
+  For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey). For more information on creating and using Project Integrated Appkeys, please refer to the [Project Integrated Appkey](/nhncloud/en/public-api/project-integrated-appkey).
 
 ### Request Common Information
 
