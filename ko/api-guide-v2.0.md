@@ -7,8 +7,9 @@ STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한
 
 ### 사전 준비
 
-- API 사용을 위해서는 {appKey}와 {secretKey}가 필요합니다.
-- {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인이 가능합니다.
+* STT API를 사용하려면 Appkey 또는 프로젝트 통합 Appkey가 필요합니다.<br/>
+  Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키이며, 프로젝트 통합 Appkey는 NHN Cloud에서 하나의 프로젝트 내 여러 서비스에 대해 공통으로 사용할 수 있는 인증 키입니다.<br/>
+  Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요. 프로젝트 통합 Appkey 생성 및 사용에 대한 자세한 내용은 [프로젝트 통합 Appkey](/nhncloud/ko/public-api/project-integrated-appkey)를 참고하세요.
 
 ### 요청 공통 정보
 
@@ -17,8 +18,8 @@ STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한
 
 [요청 헤더]
 
-| 이름 | 값 | 설명 |
-|---|---|---|
+| 이름            | 값           | 설명            |
+|---------------|-------------|---------------|
 | Authorization | {secretKey} | 콘솔에서 발급한 비밀 키 |
 
 ### 응답 공통 정보
@@ -50,11 +51,11 @@ STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한
 
 [헤더]
 
-| 이름 | 타입 | 설명 |
-|---|---|---|
-| isSuccessful | Boolean | 분석 API 성공 여부 |
-| resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지(성공 시 SUCCESS, 실패 시 오류 내용) |
+| 이름            | 타입      | 설명                               |
+|---------------|---------|----------------------------------|
+| isSuccessful  | Boolean | 분석 API 성공 여부                     |
+| resultCode    | Integer | 결과 코드                            |
+| resultMessage | String  | 결과 메시지(성공 시 SUCCESS, 실패 시 오류 내용) |
 
 ## 음성 인식 API
 
@@ -63,8 +64,8 @@ STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한
 
 [URI]
 
-| 메서드 | URI |
-|---|---|
+| 메서드  | URI                                                              |
+|------|------------------------------------------------------------------|
 | POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
 
 [요청 본문]
@@ -82,10 +83,10 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 [필드]
 
-| 이름 | 타입 | 필수 여부 |설명                                                                                                                                                 |
-|---|---|-------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| audio | multipart/form–data | 필수    | 음성 파일(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                                                         |
-| biasingList | String[] | 비필수    | 특정 단어나 구절을 우선적으로 인식하거나 치환하도록 돕는 파라미터. 예상되는 오인식 결과를 정정하거나, 특정 키워드를 강화하고자 할 때 사용합니다. 각 항목은 **"정답_모델인식값"** 형태로 구성됩니다. |
+| 이름          | 타입                  | 필수 여부 | 설명                                                                                                                 |
+|-------------|---------------------|-------|--------------------------------------------------------------------------------------------------------------------|
+| audio       | multipart/form–data | 필수    | 음성 파일(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                         |
+| biasingList | String[]            | 비필수   | 특정 단어나 구절을 우선적으로 인식하거나 치환하도록 돕는 파라미터. 예상되는 오인식 결과를 정정하거나, 특정 키워드를 강화하고자 할 때 사용합니다. 각 항목은 **"정답_모델인식값"** 형태로 구성됩니다. |
 
 #### 응답
 
@@ -119,15 +120,15 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 [필드]
 
-| 이름 | 타입 | 설명 |
-|---|---|---|
-| inputLength | Double | 인식된 음성 파일 길이(단위: 초) |
-| fileType | String | 인식된 음성 파일 타입 |
-| text | String[] | 인식된 음성의 텍스트 변환 결과 |
-| timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
-| timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
-| timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
-| confidence | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도 |
+| 이름                    | 타입       | 설명                     |
+|-----------------------|----------|------------------------|
+| inputLength           | Double   | 인식된 음성 파일 길이(단위: 초)    |
+| fileType              | String   | 인식된 음성 파일 타입           |
+| text                  | String[] | 인식된 음성의 텍스트 변환 결과      |
+| timeslot              | List     | 동일 인덱스의 텍스트가 인식된 구간 정보 |
+| timeslot[0].startTime | Long     | 구간 시작 시간(millisecond)  |
+| timeslot[0].endTime   | Long     | 구간의 종료 시간(millisecond) |
+| confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
 
 ## 음성 인식 API (비동기)
@@ -137,8 +138,8 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 [URI]
 
-| 메서드 | URI                                                                    |
-|---|------------------------------------------------------------------------|
+| 메서드  | URI                                                                    |
+|------|------------------------------------------------------------------------|
 | POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
 
 [요청 본문]
@@ -156,10 +157,10 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 [필드]
 
-| 이름       | 타입       | 필수 여부 | 설명                                                                                                           |
-|----------|----------|-------|--------------------------------------------------------------------------------------------------------------|
-| audioUrl | String   | 필수    | 최대 150MB 크기의 다운로드 가능한 음성 파일 URL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                        |
-| biasingList   | String[] | 비필수   | 특정 단어나 구절을 우선적으로 인식하거나 치환하도록 돕는 파라미터. 예상되는 오인식 결과를 정정하거나, 특정 키워드를 강화하고자 할 때 사용. 각 항목은 **"정답_모델인식값"** 형태로 구성. |
+| 이름          | 타입       | 필수 여부 | 설명                                                                                                           |
+|-------------|----------|-------|--------------------------------------------------------------------------------------------------------------|
+| audioUrl    | String   | 필수    | 최대 150MB 크기의 다운로드 가능한 음성 파일 URL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                         |
+| biasingList | String[] | 비필수   | 특정 단어나 구절을 우선적으로 인식하거나 치환하도록 돕는 파라미터. 예상되는 오인식 결과를 정정하거나, 특정 키워드를 강화하고자 할 때 사용. 각 항목은 **"정답_모델인식값"** 형태로 구성. |
 
 #### 응답
 
@@ -178,8 +179,8 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 [필드]
 
-| 이름         | 타입     | 설명                         |
-|------------|--------|----------------------------|
+| 이름     | 타입     | 설명                           |
+|--------|--------|------------------------------|
 | taskId | String | 결과 조회, 재시도를 요청할 수 있는 작업 UUID |
 
 
@@ -188,15 +189,15 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 [URI]
 
-| 메서드 | URI                                                                             |
-|---|---------------------------------------------------------------------------------|
+| 메서드 | URI                                                                                    |
+|-----|----------------------------------------------------------------------------------------|
 | GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [필드]
 
-| 이름       | 타입       | 필수 여부 | 설명               |
-|----------|----------|-------|------------------|
-| taskId | String   | 필수    | 비동기 음성 인식 API 호출 후 받은 작업 UUID |
+| 이름     | 타입     | 필수 여부 | 설명                            |
+|--------|--------|-------|-------------------------------|
+| taskId | String | 필수    | 비동기 음성 인식 API 호출 후 받은 작업 UUID |
 
 #### 응답
 
@@ -232,38 +233,38 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 [필드]
 
-| 이름 | 타입 | 설명 |
-|---|---|---|
-| taskId | String   | 상태 조회를 요청한 작업 UUID |
-| taskStatus | String   | 작업의 현재 상태(PENDING, IN_PROGRESS, COMPLETED, FAILED) |
-| result | Result   | 작업의 상태가 COMPLETED일 경우 결과값 |
+| 이름         | 타입     | 설명                                                 |
+|------------|--------|----------------------------------------------------|
+| taskId     | String | 상태 조회를 요청한 작업 UUID                                 |
+| taskStatus | String | 작업의 현재 상태(PENDING, IN_PROGRESS, COMPLETED, FAILED) |
+| result     | Result | 작업의 상태가 COMPLETED일 경우 결과값                          |
 
 [Result]
 
-| 이름 | 타입 | 설명 |
-|---|---|---|
-| inputLength | Double | 인식된 음성 파일 길이(단위: 초) |
-| fileType | String | 인식된 음성 파일 타입 |
-| text | String[] | 인식된 음성의 텍스트 변환 결과 |
-| timeslot | List | 동일 인덱스의 텍스트가 인식된 구간 정보 |
-| timeslot[0].startTime | Long | 구간 시작 시간(millisecond) |
-| timeslot[0].endTime | Long | 구간의 종료 시간(millisecond) |
-| confidence | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도 |
+| 이름                    | 타입       | 설명                     |
+|-----------------------|----------|------------------------|
+| inputLength           | Double   | 인식된 음성 파일 길이(단위: 초)    |
+| fileType              | String   | 인식된 음성 파일 타입           |
+| text                  | String[] | 인식된 음성의 텍스트 변환 결과      |
+| timeslot              | List     | 동일 인덱스의 텍스트가 인식된 구간 정보 |
+| timeslot[0].startTime | Long     | 구간 시작 시간(millisecond)  |
+| timeslot[0].endTime   | Long     | 구간의 종료 시간(millisecond) |
+| confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
 ### 재시도
 - 실패한 작업의 재시도를 요청합니다.
 
 [URI]
 
-| 메서드 | URI                                                                             |
-|---|---------------------------------------------------------------------------------|
+| 메서드 | URI                                                                                   |
+|-----|---------------------------------------------------------------------------------------|
 | GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [필드]
 
-| 이름       | 타입       | 필수 여부 | 설명               |
-|----------|----------|-------|------------------|
-| taskId | String   | 필수    | 비동기 음성 인식 API 호출 후 받은 작업 UUID |
+| 이름     | 타입     | 필수 여부 | 설명                            |
+|--------|--------|-------|-------------------------------|
+| taskId | String | 필수    | 비동기 음성 인식 API 호출 후 받은 작업 UUID |
 
 #### 응답
 
