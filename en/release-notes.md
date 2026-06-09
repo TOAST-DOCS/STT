@@ -1,5 +1,11 @@
 ## AI Service > Speech to Text > Release Notes
 
+### 2026. 07. 07.
+
+* 도메인 변경
+* 용량 제한 변경
+* 음성 파일 시간 제한 변경
+
 ### August 14, 2025
 
 #### Added Features

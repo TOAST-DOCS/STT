@@ -66,7 +66,7 @@ STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한
 
 | 메서드  | URI                                                              |
 |------|------------------------------------------------------------------|
-| POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
+| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
 
 [요청 본문]
 
@@ -74,7 +74,7 @@ STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한
 - 사용자 단어 리스트(biasingList)로 입력된 값에 따라서 "차단계"로 인식된 단어는 "차단기"로, "안전 운행"으로 인식된 단어는 "안전운행"으로 치환된 결과가 제공됩니다.
 
 ```
-curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
 -F 'biasingList="차단기_차단계"' \
 -F 'biasingList="안전운행_안전 운행"' \ 
@@ -140,7 +140,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 | 메서드  | URI                                                                    |
 |------|------------------------------------------------------------------------|
-| POST | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
+| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
 
 [요청 본문]
 
@@ -149,7 +149,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 - 사용자 단어 리스트(biasingList)로 입력된 값에 따라서 "차단계"로 인식된 단어는 "차단기"로, "안전 운행"으로 인식된 단어는 "안전운행"으로 치환된 결과가 제공됩니다.
 
 ```
-curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"audioUrl": "https://url/to/audioFile", "biasingList": ["차단기_차단계", "안전운행_안전 운행"]}'
@@ -191,7 +191,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                                    |
 |-----|----------------------------------------------------------------------------------------|
-| GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
+| GET | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [필드]
 
@@ -258,7 +258,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                                   |
 |-----|---------------------------------------------------------------------------------------|
-| GET | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
+| GET | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [필드]
 

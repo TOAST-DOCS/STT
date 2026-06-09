@@ -12,7 +12,7 @@ For more information on checking and using Appkeys, please refer to the [Appkey]
 
 | Method  | URI                                                              |
 |---------|------------------------------------------------------------------|
-| POST    | https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
+| POST    | https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
 
 [Request Header]
 
@@ -25,7 +25,7 @@ For more information on checking and using Appkeys, please refer to the [Appkey]
 - Input the binary data of the voice file.
 
 ```
-curl -X POST 'https://speech.api.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
 -H 'Authorization: ${secretKey}'
 ```

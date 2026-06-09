@@ -66,7 +66,7 @@ STT API v2.0 significantly improves the response structure of previous verions, 
 
 | Method  | URI                                                              |
 |---------|------------------------------------------------------------------|
-| POST    | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
+| POST    | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
 
 [Request Body]
 
@@ -74,7 +74,7 @@ STT API v2.0 significantly improves the response structure of previous verions, 
 - As per the user word list (biasingList), the word recognized "차단계" is replaced with "차단기", and the word recognized "안전 운행" is replaced with "안전운행".
 
 ```
-curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
 -F 'biasingList="차단기_차단계"' \
 -F 'biasingList="안전운행_안전 운행"' \ 
@@ -140,7 +140,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 | Method  | URI                                                                    |
 |---------|------------------------------------------------------------------------|
-| POST    | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
+| POST    | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
 
 [Request Body]
 
@@ -149,7 +149,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 - As per the user word list (biasingList), the word recognized "차단계" is replaced with "차단기", and the word recognized "안전 운행" is replaced with "안전운행".
 
 ```
-curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"audioUrl": "https://url/to/audioFile", "biasingList": ["차단기_차단계", "안전운행_안전 운행"]}'
@@ -191,7 +191,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | Method  | URI                                                                                    |
 |---------|----------------------------------------------------------------------------------------|
-| GET     | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
+| GET     | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [Field]
 
@@ -258,7 +258,7 @@ curl -X POST 'https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | Method  | URI                                                                                   |
 |---------|---------------------------------------------------------------------------------------|
-| GET     | https://speech.api.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
+| GET     | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [Field]
 
