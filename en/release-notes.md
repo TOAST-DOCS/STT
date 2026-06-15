@@ -5,6 +5,9 @@
 * 도메인 변경
 * 용량 제한 변경
 * 음성 파일 시간 제한 변경
+* API v1.1, v2.1 released
+  * Added API using User Access Key token authentication.
+  * For more information on issuing and using User Access Key tokens, please refer to the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
 
 ### August 14, 2025
 
