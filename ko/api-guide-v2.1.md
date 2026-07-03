@@ -120,7 +120,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt' 
 | text                  | String[] | 인식된 음성의 텍스트 변환 결과      |
 | timeslot              | List     | 동일 인덱스의 텍스트가 인식된 구간 정보 |
 | timeslot[0].startTime | Long     | 구간 시작 시간(millisecond)  |
-| timeslot[0].endTime   | Long     | 구간의 종료 시간(millisecond) |
+| timeslot[0].endTime   | Long     | 구간 종료 시간(millisecond) |
 | confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
 
