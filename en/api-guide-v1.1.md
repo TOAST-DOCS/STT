@@ -4,30 +4,31 @@
 
 #### Request
 
-An AppKey or a Project Integrated Appkey is required to use the STT API.<br/>
-An AppKey is a unique authentication key issued for each individual NHN Cloud service, while a Project Integrated Appkey is a common authentication key that can be shared across multiple services within a single NHN Cloud project.<br/>
-For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey). For more information on creating and using Project Integrated Appkeys, please refer to the [Project Integrated Appkey](/nhncloud/en/public-api/project-integrated-appkey).
+### Authentication and Authorization
+
+STT API uses User Access Key tokens for authentication and authorization when making API calls. The User Access Key token is a temporary, Bearer-type access token issued from a User Access Key.
+For more information on issuing and using User Access Key tokens, see the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
 
 [URI]
 
 | Method  | URI                                                              |
 |---------|------------------------------------------------------------------|
-| POST    | https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
+| POST    | https://api-speech.nhncloudservice.com/v1.1/appkeys/{appKey}/stt |
 
 [Request Header]
 
-| Name          | Value       | Description                          |
-|---------------|-------------|--------------------------------------|
-| Authorization | {secretKey} | Security key issued from the console |
+| Name                | Value                          | Description            |
+|---------------------|--------------------------------|------------------------|
+| X-NHN-Authorization | Bearer {User Access Key Token} | User Access Key token |
 
 [Request Body]
 
 - Input the binary data of the voice file.
 
 ```
-curl -X POST 'https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v1.1/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
--H 'Authorization: ${secretKey}'
+-H 'X-NHN-Authorization: Bearer ${User Access Key Token}'
 ```
 
 [Field]

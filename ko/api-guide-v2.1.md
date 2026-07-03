@@ -1,26 +1,19 @@
 ## AI Service > Speech to Text > API 가이드
 
-Speech to Text API v2.0은 더욱 풍부한 음성 인식 결과를 제공합니다.
-Speech to Text API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한 후처리와 사용자 경험 개선에 필요한 정보를 더 정교하게 제공합니다.
+Speech to Text API v2.1은 더욱 풍부한 음성 인식 결과를 제공합니다.
+Speech to Text API v2.1은 이전 버전의 응답 구조를 대폭 개선하여, 다양한 후처리와 사용자 경험 개선에 필요한 정보를 더 정교하게 제공합니다.
 
 ## API 공통 정보
 
 ### 사전 준비
 
-Speech to Text API를 사용하려면 Appkey 또는 프로젝트 통합 Appkey가 필요합니다.<br/>
-Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키이며, 프로젝트 통합 Appkey는 NHN Cloud에서 하나의 프로젝트 내 여러 서비스에 대해 공통으로 사용할 수 있는 인증 키입니다.<br/>
-Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요. 프로젝트 통합 Appkey 생성 및 사용에 대한 자세한 내용은 [프로젝트 통합 Appkey](/nhncloud/ko/public-api/project-integrated-appkey)를 참고하세요.
-
-### 요청 공통 정보
-
-- API를 사용하기 위해서는 {secretKey} 인증 처리가 필요합니다.
-- 모든 API 요청 헤더의 **Authorization**에 {secretKey}를 넣어서 요청해야 합니다.
+Speech to Text API는 인증/인가를 위해 User Access Key 토큰을 사용합니다. User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다. User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token)을 참고하세요.
 
 [요청 헤더]
 
-| 이름            | 값           | 설명            |
-|---------------|-------------|---------------|
-| Authorization | {secretKey} | 콘솔에서 발급한 비밀 키 |
+| 이름                  | 값                              | 설명                  |
+|---------------------|--------------------------------|---------------------|
+| X-NHN-Authorization | Bearer {User Access Key Token} | User Access Key 토큰 |
 
 ### 응답 공통 정보
 
@@ -66,7 +59,7 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 
 | 메서드  | URI                                                              |
 |------|------------------------------------------------------------------|
-| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
+| POST | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt |
 
 [요청 본문]
 
@@ -74,11 +67,11 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 - 사용자 단어 리스트(biasingList)로 입력된 값에 따라서 "차단계"로 인식된 단어는 "차단기"로, "안전 운행"으로 인식된 단어는 "안전운행"으로 치환된 결과가 제공됩니다.
 
 ```
-curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
 -F 'biasingList="차단기_차단계"' \
 -F 'biasingList="안전운행_안전 운행"' \ 
--H 'Authorization: ${secretKey}'
+-H 'X-NHN-Authorization: Bearer ${User Access Key Token}'
 ```
 
 [필드]
@@ -99,7 +92,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
         "resultMessage": "Success"
     },
     "result": {
-        "inputLength": 220.0,
+        "inputLength": 220.1,
         "fileType": "mp3float",
         "text": [
             "예시 응답 텍스트입니다",
@@ -127,11 +120,11 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | text                  | String[] | 인식된 음성의 텍스트 변환 결과      |
 | timeslot              | List     | 동일 인덱스의 텍스트가 인식된 구간 정보 |
 | timeslot[0].startTime | Long     | 구간 시작 시간(millisecond)  |
-| timeslot[0].endTime   | Long     | 구간의 종료 시간(millisecond) |
+| timeslot[0].endTime   | Long     | 구간 종료 시간(millisecond) |
 | confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
 
-## 음성 인식 API (비동기)
+## 음성 인식 API(비동기)
 
 ### 음성 인식(비동기)
 - 오디오 파일의 음성 데이터를 텍스트 형태로 추출합니다.(비동기)
@@ -140,17 +133,17 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 | 메서드  | URI                                                                    |
 |------|------------------------------------------------------------------------|
-| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
+| POST | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async |
 
 [요청 본문]
 
 - 오디오 파일을 다운로드 가능한 URL로 제공하여 음성 인식을 요청합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경하고, {User Access Key Token}은 발급받은 User Access Key 토큰으로 변경합니다.
 - 사용자 단어 리스트(biasingList)로 입력된 값에 따라서 "차단계"로 인식된 단어는 "차단기"로, "안전 운행"으로 인식된 단어는 "안전운행"으로 치환된 결과가 제공됩니다.
 
 ```
-curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async' \
--H 'Authorization: {secretKey}' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async' \
+-H 'X-NHN-Authorization: Bearer ${User Access Key Token}' \
 -H 'Content-Type: application/json' \
 --data '{"audioUrl": "https://url/to/audioFile", "biasingList": ["차단기_차단계", "안전운행_안전 운행"]}'
 ```
@@ -191,7 +184,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                                    |
 |-----|----------------------------------------------------------------------------------------|
-| GET | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
+| GET | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [필드]
 
@@ -213,7 +206,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
     "taskId": "d3dc604c-ebef-411a-959e-16f99770f2cf",
     "taskStatus": "COMPLETED",
     "result": {
-        "inputLength": 220.0,
+        "inputLength": 220.1,
         "fileType": "mp3float",
         "text": [
             "예시 응답 텍스트입니다",
@@ -248,7 +241,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | text                  | String[] | 인식된 음성의 텍스트 변환 결과      |
 | timeslot              | List     | 동일 인덱스의 텍스트가 인식된 구간 정보 |
 | timeslot[0].startTime | Long     | 구간 시작 시간(millisecond)  |
-| timeslot[0].endTime   | Long     | 구간의 종료 시간(millisecond) |
+| timeslot[0].endTime   | Long     | 구간 종료 시간(millisecond) |
 | confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
 ### 재시도
@@ -258,7 +251,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | 메서드 | URI                                                                                   |
 |-----|---------------------------------------------------------------------------------------|
-| GET | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
+| GET | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [필드]
 

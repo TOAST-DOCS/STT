@@ -33,8 +33,8 @@ For more accurate speech recognition, please refer to the following guide.
 
 ### Synchronous API
 
-* Maximum capacity: 10MB
-* Recognition time for the voice file: minimum 0.36 seconds, maximum 150 seconds
+* Maximum capacity: 150MB
+* Recognition time for the voice file: minimum 0.36 seconds, maximum 3,600 seconds (1 hour)
 * It is suitable for the case where a quick response is required for a short speech.
 
 ### Asynchronous API
