@@ -124,7 +124,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt' 
 | confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
 
-## 음성 인식 API (비동기)
+## 음성 인식 API(비동기)
 
 ### 음성 인식(비동기)
 - 오디오 파일의 음성 데이터를 텍스트 형태로 추출합니다.(비동기)
