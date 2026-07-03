@@ -1,15 +1,13 @@
 ## AI Service > Speech to Text > API Guide
 
-STT API v2.1 provides more varied results for voice recognition.
-STT API v2.1 significantly improves the response structure of previous verions, providing more sophisticated information needed for various post-processing and improving the user experience.
+Speech to Text API v2.1 provides more varied results for voice recognition.
+Speech to Text API v2.1 significantly improves the response structure of previous verions, providing more sophisticated information needed for various post-processing and improving the user experience.
 
 ## API Common Information
 
 ### Preliminary preparation
 
-* STT API uses User Access Key tokens for authentication and authorization when making API calls. The User Access Key token is a temporary, Bearer-type access token issued from a User Access Key.
-For more information on issuing and using User Access Key tokens, see the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
-
+Speech to Text API uses User Access Key tokens for authentication and authorization. The User Access Key token is a temporary, Bearer-type access token issued from a User Access Key. For more information on issuing and using User Access Key tokens, see the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
 
 [Request Header]
 
@@ -78,9 +76,9 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt' 
 
 [Field]
 
-| Name        | Type                | Required     | Description                                                                                                                                                                                                                                                                |
-|-------------|---------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| audio       | multipart/form–data | Required     | Voice file (WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                                                                                                                                                                           |
+| Name        | Type                | Required     | Description                                                                                                                 |
+|-------------|---------------------|-------|--------------------------------------------------------------------------------------------------------------------|
+| audio       | multipart/form–data | Required     | Voice file (WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                         |
 | biasingList | String[]            | Not required | Parameters that help to prioritize recognition or replacement of specific words or phrases. It's used for when you want to correct expected misrecognition results or strengthen specific keywords. Each item is structured in the form **"answer_modelRecognitionValue**. |
 
 #### Response
@@ -152,9 +150,9 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 
 [Field]
 
-| Name        | Type      | Required     | Description                                                                                                                                                                                                                                                                |
-|-------------|-----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| audioUrl    | String    | Required     | Downloadable audio files up to 150MB in size (WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                                                                                                                                         |
+| Name        | Type      | Required     | Description                                                                                                           |
+|-------------|----------|-------|--------------------------------------------------------------------------------------------------------------|
+| audioUrl    | String    | Required     | Downloadable audio files up to 150MB in size (WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                         |
 | biasingList | String[]  | Not required | Parameters that help to prioritize recognition or replacement of specific words or phrases. It's used for when you want to correct expected misrecognition results or strengthen specific keywords. Each item is structured in the form **"answer_modelRecognitionValue**. |
 
 #### Response
@@ -190,8 +188,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 
 [Field]
 
-| Name   | Type   | Required  | Description                                                              |
-|--------|--------|-----------|--------------------------------------------------------------------------|
+| Name   | Type   | Required  | Description                            |
+|--------|--------|-------|-------------------------------|
 | taskId | String | Required  | Task UUID received after calling the asynchronous speech recognition API |
 
 #### Response
@@ -236,8 +234,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 
 [Result]
 
-| Name                  | Type     | Description                                                        |
-|-----------------------|----------|--------------------------------------------------------------------|
+| Name                  | Type     | Description                     |
+|-----------------------|----------|------------------------|
 | inputLength           | Double   | Recognized voice file length (unit: second)                        |
 | fileType              | String   | Recognized voice file type                                         |
 | text                  | String[] | Result for text conversion of recognized voice                     |
@@ -275,4 +273,3 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 	}
 }
 ```
-
