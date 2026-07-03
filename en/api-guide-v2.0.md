@@ -1,15 +1,15 @@
 ## AI Service > Speech to Text > API Guide
 
-STT API v2.0 provides more varied results for voice recognition.
-STT API v2.0 significantly improves the response structure of previous verions, providing more sophisticated information needed for various post-processing and improving the user experience.
+Speech to Text API v2.0 provides more varied results for voice recognition.
+Speech to Text API v2.0 significantly improves the response structure of previous verions, providing more sophisticated information needed for various post-processing and improving the user experience.
 
 ## API Common Information
 
 ### Preliminary preparation
 
-* An AppKey or a Project Integrated Appkey is required to use the STT API.<br/>
-  An AppKey is a unique authentication key issued for each individual NHN Cloud service, while a Project Integrated Appkey is a common authentication key that can be shared across multiple services within a single NHN Cloud project.<br/>
-  For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey). For more information on creating and using Project Integrated Appkeys, please refer to the [Project Integrated Appkey](/nhncloud/en/public-api/project-integrated-appkey).
+An AppKey or a Project Integrated Appkey is required to use the Speech to Text API.<br/>
+An AppKey is a unique authentication key issued for each individual NHN Cloud service, while a Project Integrated Appkey is a common authentication key that can be shared across multiple services within a single NHN Cloud project.<br/>
+For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey). For more information on creating and using Project Integrated Appkeys, please refer to the [Project Integrated Appkey](/nhncloud/en/public-api/project-integrated-appkey).
 
 ### Request Common Information
 
@@ -66,7 +66,7 @@ STT API v2.0 significantly improves the response structure of previous verions, 
 
 | Method  | URI                                                              |
 |---------|------------------------------------------------------------------|
-| POST    | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
+| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
 
 [Request Body]
 
@@ -140,7 +140,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 | Method  | URI                                                                    |
 |---------|------------------------------------------------------------------------|
-| POST    | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
+| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
 
 [Request Body]
 
@@ -191,7 +191,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | Method  | URI                                                                                    |
 |---------|----------------------------------------------------------------------------------------|
-| GET     | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
+| GET | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [Field]
 
@@ -258,7 +258,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | Method  | URI                                                                                   |
 |---------|---------------------------------------------------------------------------------------|
-| GET     | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
+| GET | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [Field]
 

@@ -12,7 +12,7 @@ For more information on checking and using Appkeys, please refer to the [Appkey]
 
 | Method  | URI                                                              |
 |---------|------------------------------------------------------------------|
-| POST    | https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
+| POST | https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
 
 [Request Header]
 

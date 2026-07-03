@@ -1,6 +1,6 @@
 ## AI Service > Speech to Text > Error Code
 
-Codes not specified below follow the HTTP Response Status Code (RFC9110).
+Codes not specified below follow the HTTP response status codes (RFC 9110).
 
 | resultCode | resultKey                | resultMessage                                        |
 |------------|--------------------------|------------------------------------------------------|
