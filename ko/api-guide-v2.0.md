@@ -1,6 +1,6 @@
 ## AI Service > Speech to Text > API 가이드
 
-STT API v2.0은 더욱 풍부한 음성 인식 결과를 제공합니다.
+Speech to Text API v2.0은 더욱 풍부한 음성 인식 결과를 제공합니다.
 STT API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한 후처리와 사용자 경험 개선에 필요한 정보를 더 정교하게 제공합니다.
 
 ## API 공통 정보
