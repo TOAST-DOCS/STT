@@ -2,9 +2,9 @@
 
 ### 2026. 07. 07.
 
-* 도메인 변경
-* 용량 제한 변경
-* 음성 파일 시간 제한 변경
+* ドメイン変更
+* 容量制限の変更
+* 音声ファイルの時間制限の変更
 * API v1.1,v2.1リリース
   * User Access Keyトークン認証を使用するAPIが追加されました。
   * User Access Keyトークンの発行及び使用に関する詳細は、[User Access Keyトークン](/nhncloud/ja/public-api/user-access-key-token)を参照してください。
