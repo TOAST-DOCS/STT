@@ -1,6 +1,6 @@
 ## AI Service > Speech to Text > Error Code
 
-Codes not specified below follow the [Gateway error codes in API Gateway](https://docs.nhncloud.com/en/Application%20Service/API%20Gateway/en/error-code/) and HTTP Response Status Code (RFC9110).
+Codes not specified below follow the HTTP response status codes (RFC 9110).
 
 | resultCode | resultKey                | resultMessage                                        |
 |------------|--------------------------|------------------------------------------------------|
@@ -26,6 +26,8 @@ Codes not specified below follow the [Gateway error codes in API Gateway](https:
 | 4010004    | INVALID_PROJECT          | Invalid project.                                     |
 | 4010005    | UNAUTHORIZED_ROLE        | Unauthorized role.                                   |
 | 4010006    | INVALID_ASYNC_ID         | Invalid async id.                                    |
+| 4010007    | INVALID_TOKEN            | Invalid token.                                       |
+| 4010008    | PERMISSION_DENIED        | Permission denied.                                   |
 | 5000001    | INTERNAL_API_FAIL        | Internal Api fail.                                   |
 | 5000002    | ERROR_PARSING_FAIL       | Error parsing fail.                                  |
 | 5000003    | DATABASE_FAIL            | Database server error.                               |

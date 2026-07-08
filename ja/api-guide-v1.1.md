@@ -4,21 +4,19 @@
 
 #### リクエスト
 
-STT APIを使用するにはAppkeyまたはプロジェクト統合Appkeyが必要です。<br/>
-Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、プロジェクト統合Appkeyは、NHN Cloudの1つのプロジェクト内の複数のサービスに対して共通で使用できる認証キーです。<br/>
-Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。プロジェクト統合Appkeyの作成及び使用に関する詳細は、[プロジェクト統合Appkey](/nhncloud/ja/public-api/project-integrated-appkey)を参照してください。
+Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ko/public-api/user-access-key-token)をご参照ください。
 
 [URI]
 
 | メソッド | URI                                                              |
 |------|------------------------------------------------------------------|
-| POST | https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
+| POST | https://api-speech.nhncloudservice.com/v1.1/appkeys/{appKey}/stt |
 
 [リクエストヘッダ]
 
-| 名前            | 値           | 説明                  |
-|---------------|-------------|---------------------|
-| Authorization | {secretKey} | コンソールで発行されたセキュリティキー |
+| 名前                  | 値                              | 説明                    |
+|---------------------|--------------------------------|-----------------------|
+| X-NHN-Authorization | Bearer {User Access Key Token} | User Access Key トークン |
 
 [リクエスト本文]
 
@@ -27,7 +25,7 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 ```
  
 -F 'audio=@sample.mp3' \
--H 'Authorization: ${secretKey}'
+-H 'X-NHN-Authorization: Bearer ${User Access Key Token}'
 ```
 
 [フィールド]

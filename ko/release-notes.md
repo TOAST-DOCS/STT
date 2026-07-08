@@ -1,5 +1,14 @@
 ## AI Service > Speech to Text > 릴리스 노트
 
+### 2026. 07. 07.
+
+* 도메인 변경
+* 용량 제한 변경
+* 음성 파일 시간 제한 변경
+* API v1.1, v2.1 출시
+  * User Access Key 토큰 인증을 사용하는 API가 추가되었습니다.
+  * User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token)을 참고하세요.
+
 ### 2025. 08. 14.
 
 #### 기능 추가
