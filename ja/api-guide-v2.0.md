@@ -1,15 +1,15 @@
 ## AI Service > Speech to Text > APIガイド
 
-STT API v2.0は、より豊富な音声認識結果を提供します。
-STT API v2.0は、旧バージョンのレスポンス構造を大幅に改善し、多様な後処理やユーザーエクスペリエンスの向上に必要な情報を、より精巧に提供します。
+Speech to Text API v2.0は、より豊富な音声認識結果を提供します。
+Speech to Text API v2.0は、旧バージョンのレスポンス構造を大幅に改善し、多様な後処理やユーザーエクスペリエンスの向上に必要な情報を、より精巧に提供します。
 
 ## API共通情報
 
 ### 事前準備
 
-* STT APIを使用するにはAppkeyまたはプロジェクト統合Appkeyが必要です。<br/>
-  Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、プロジェクト統合Appkeyは、NHN Cloudの1つのプロジェクト内の複数のサービスに対して共通で使用できる認証キーです。<br/>
-  Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。プロジェクト統合Appkeyの作成及び使用に関する詳細は、[プロジェクト統合Appkey](/nhncloud/ja/public-api/project-integrated-appkey)を参照してください。
+Speech to Text APIを使用するにはAppkeyまたはプロジェクト統合Appkeyが必要です。<br/>
+Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、プロジェクト統合Appkeyは、NHN Cloudの1つのプロジェクト内の複数のサービスに対して共通で使用できる認証キーです。<br/>
+Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。プロジェクト統合Appkeyの作成及び使用に関する詳細は、[プロジェクト統合Appkey](/nhncloud/ja/public-api/project-integrated-appkey)を参照してください。
 
 ### リクエスト共通情報
 
