@@ -4,30 +4,28 @@
 
 #### 요청
 
-STT API를 사용하려면 Appkey 또는 프로젝트 통합 Appkey가 필요합니다.<br/>
-Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키이며, 프로젝트 통합 Appkey는 NHN Cloud에서 하나의 프로젝트 내 여러 서비스에 대해 공통으로 사용할 수 있는 인증 키입니다.<br/>
-Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요. 프로젝트 통합 Appkey 생성 및 사용에 대한 자세한 내용은 [프로젝트 통합 Appkey](/nhncloud/ko/public-api/project-integrated-appkey)를 참고하세요.
+Speech to Text API는 인증/인가를 위해 User Access Key 토큰을 사용합니다. User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다. User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token)을 참고하세요.
 
 [URI]
 
 | 메서드  | URI                                                              |
 |------|------------------------------------------------------------------|
-| POST | https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt |
+| POST | https://api-speech.nhncloudservice.com/v1.1/appkeys/{appKey}/stt |
 
 [요청 헤더]
 
-| 이름            | 값           | 설명             |
-|---------------|-------------|----------------|
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+| 이름                  | 값                              | 설명                  |
+|---------------------|--------------------------------|---------------------|
+| X-NHN-Authorization | Bearer {User Access Key Token} | User Access Key 토큰 |
 
 [요청 본문]
 
 - 음성 파일의 바이너리 데이터를 넣습니다.
 
 ```
-curl -X POST 'https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v1.1/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
--H 'Authorization: ${secretKey}'
+-H 'X-NHN-Authorization: Bearer ${User Access Key Token}'
 ```
 
 [필드]

@@ -1,5 +1,14 @@
 ## AI Service > Speech to Text > Release Notes
 
+### July 7, 2026
+
+* Changed the domain
+* Changed the file size limit
+* Changed the audio file duration limit
+* API v1.1, v2.1 released
+  * Added API using User Access Key token authentication.
+  * For more information on issuing and using User Access Key tokens, see the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
+
 ### August 14, 2025
 
 #### Added Features
