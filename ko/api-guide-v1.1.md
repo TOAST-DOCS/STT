@@ -1,7 +1,12 @@
-## AI Service > Speech to Text > API 가이드
+<!-- pre-align:aligned sig=52fa21e7a0e7 -->
 
-### 음성 인식 API
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > API 가이드 { #ai-service-speech-to-text-api-guide }
 
+<a id="speech-recognition-api"></a>
+### 음성 인식 API { #speech-recognition-api }
+
+<a id="speech-recognition-api-request"></a>
 #### 요청
 
 Speech to Text API는 인증/인가를 위해 User Access Key 토큰을 사용합니다. User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다. User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token)을 참고하세요.
@@ -34,6 +39,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v1.1/appkeys/{appKey}/stt' 
 |-------|---------------------|--------------------------------------------|
 | audio | multipart/form–data | 음성 파일(WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
 
+<a id="speech-recognition-api-response"></a>
 #### 응답
 
 [응답 본문]

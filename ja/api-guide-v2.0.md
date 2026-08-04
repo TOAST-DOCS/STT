@@ -1,17 +1,21 @@
-## AI Service > Speech to Text > APIガイド
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > APIガイド { #ai-service-speech-to-text-api-guide }
 
 Speech to Text API v2.0は、より豊富な音声認識結果を提供します。
 Speech to Text API v2.0は、旧バージョンのレスポンス構造を大幅に改善し、多様な後処理やユーザーエクスペリエンスの向上に必要な情報を、より精巧に提供します。
 
-## API共通情報
+<a id="api-common-information"></a>
+## API共通情報 { #api-common-information }
 
-### 事前準備
+<a id="preliminary-preparation"></a>
+### 事前準備 { #preliminary-preparation }
 
 Speech to Text APIを使用するにはAppkeyまたはプロジェクト統合Appkeyが必要です。<br/>
 Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、プロジェクト統合Appkeyは、NHN Cloudの1つのプロジェクト内の複数のサービスに対して共通で使用できる認証キーです。<br/>
 Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。プロジェクト統合Appkeyの作成及び使用に関する詳細は、[プロジェクト統合Appkey](/nhncloud/ja/public-api/project-integrated-appkey)を参照してください。
 
-### リクエスト共通情報
+<a id="request-common-information"></a>
+### リクエスト共通情報 { #request-common-information }
 
 - APIを使用するには{secretKey}認証処理が必要です。
 - 全てのAPIリクエストヘッダの **Authorization**に{secretKey}を入れてリクエストする必要があります。
@@ -22,7 +26,8 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 |---------------|-------------|---------------|
 | Authorization | {secretKey} | コンソールで発行した秘密鍵 |
 
-### レスポンス共通情報
+<a id="response-common-information"></a>
+### レスポンス共通情報 { #response-common-information }
 
 - 全てのAPIリクエストに **200 OK**でレスポンスします。詳細なレスポンス結果はレスポンス本文のヘッダを参照してください。
 
@@ -57,9 +62,11 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 | resultCode    | Integer | 結果コード                          |
 | resultMessage | String  | 結果メッセージ(成功時はSUCCESS、失敗時はエラー内容) |
 
-## 音声認識API
+<a id="voice-recognition-api"></a>
+## 音声認識API { #voice-recognition-api }
 
-### 音声認識
+<a id="voice-recognition"></a>
+### 音声認識 { #voice-recognition }
 - オーディオファイルの音声データをテキスト形式で抽出します。
 
 [URI]
@@ -88,6 +95,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | audio       | multipart/form–data | 必須     | 音声ファイル(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                |
 | biasingList | String[]            | 任意     | 特定の単語やフレーズを優先的に認識または置換するためのパラメータ。想定される誤認識の結果を訂正したり、特定のキーワードを強化したりする場合に使用します。各項目は**「正解_モデル認識値」**の形式で構成されます。 |
 
+<a id="voice-recognition-response"></a>
 #### レスポンス
 
 [レスポンス本文]
@@ -131,9 +139,11 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | confidence            | Double[] | 同じインデックスのテキスト認識結果の信頼度   |
 
 
-## 音声認識API (非同期)
+<a id="voice-recognition-api-asynchronous"></a>
+## 音声認識API (非同期) { #voice-recognition-api-asynchronous }
 
-### 音声認識(非同期)
+<a id="voice-recognition-asynchronous"></a>
+### 音声認識(非同期) { #voice-recognition-asynchronous }
 - オーディオファイルの音声データをテキスト形式で抽出します。(非同期)
 
 [URI]
@@ -162,6 +172,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | audioUrl    | String   | 必須     | 最大150MBサイズのダウンロード可能な音声ファイルURL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                  |
 | biasingList | String[] | 任意     | 特定の単語やフレーズを優先的に認識または置換するためのパラメータ。想定される誤認識の結果を訂正したり、特定のキーワードを強化したりする場合に使用。各項目は**「正解_モデル認識値」**の形式で構成。 |
 
+<a id="voice-recognition-asynchronous-response"></a>
 #### レスポンス
 
 [レスポンス本文]
@@ -184,7 +195,19 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | taskId | String | 結果照会、再試行をリクエストできるタスクUUID |
 
 
-### ヘルスチェック
+<a id="check-status"></a>
+### ステータス確認 { #check-status }
+
+<!-- TODO: translate body -->
+
+<a id="check-status-response"></a>
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (ヘルスチェック (health check) does not semantically match any ko heading; k12 is 상태 확인 (status check), a distinct concept) -->
+<a id="retry"></a>
+### ヘルスチェック { #retry }
 - リクエストしたタスクの現在の状態を照会します。
 
 [URI]
@@ -199,6 +222,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |--------|--------|--------|-------------------------------|
 | taskId | String | 必須     | 非同期音声認識APIの呼び出し後に受け取ったタスクUUID |
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (レスポンス under t12 has no ko counterpart because its parent t12 is itself unmatched) -->
+<a id="retry-response"></a>
 #### レスポンス
 
 [レスポンス本文]

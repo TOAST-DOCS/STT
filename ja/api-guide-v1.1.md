@@ -1,7 +1,12 @@
-## AI Service > Speech to Text > APIガイド
+<!-- pre-align:aligned sig=52fa21e7a0e7 -->
 
-### 音声認識API
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > APIガイド { #ai-service-speech-to-text-api-guide }
 
+<a id="speech-recognition-api"></a>
+### 音声認識API { #speech-recognition-api }
+
+<a id="speech-recognition-api-request"></a>
 #### リクエスト
 
 Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ko/public-api/user-access-key-token)をご参照ください。
@@ -34,6 +39,7 @@ Speech to Text APIは、認証/認可のためにUser Access Keyトークンを�
 |-------|---------------------|---------------------------------------|
 | audio | multipart/form–data | 音声ファイル(WAV、WebM、MP3、OGG、FLAC、AAC、AC3) |
 
+<a id="speech-recognition-api-response"></a>
 #### レスポンス
 
 [レスポンス本文]

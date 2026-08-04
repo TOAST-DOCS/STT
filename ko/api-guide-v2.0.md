@@ -1,17 +1,21 @@
-## AI Service > Speech to Text > API 가이드
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > API 가이드 { #ai-service-speech-to-text-api-guide }
 
 Speech to Text API v2.0은 더욱 풍부한 음성 인식 결과를 제공합니다.
 Speech to Text API v2.0은 이전 버전의 응답 구조를 대폭 개선하여, 다양한 후처리와 사용자 경험 개선에 필요한 정보를 더 정교하게 제공합니다.
 
-## API 공통 정보
+<a id="api-common-information"></a>
+## API 공통 정보 { #api-common-information }
 
-### 사전 준비
+<a id="preliminary-preparation"></a>
+### 사전 준비 { #preliminary-preparation }
 
 Speech to Text API를 사용하려면 Appkey 또는 프로젝트 통합 Appkey가 필요합니다.<br/>
 Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키이며, 프로젝트 통합 Appkey는 NHN Cloud에서 하나의 프로젝트 내 여러 서비스에 대해 공통으로 사용할 수 있는 인증 키입니다.<br/>
 Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요. 프로젝트 통합 Appkey 생성 및 사용에 대한 자세한 내용은 [프로젝트 통합 Appkey](/nhncloud/ko/public-api/project-integrated-appkey)를 참고하세요.
 
-### 요청 공통 정보
+<a id="request-common-information"></a>
+### 요청 공통 정보 { #request-common-information }
 
 - API를 사용하기 위해서는 {secretKey} 인증 처리가 필요합니다.
 - 모든 API 요청 헤더의 **Authorization**에 {secretKey}를 넣어서 요청해야 합니다.
@@ -22,7 +26,8 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 |---------------|-------------|---------------|
 | Authorization | {secretKey} | 콘솔에서 발급한 비밀 키 |
 
-### 응답 공통 정보
+<a id="response-common-information"></a>
+### 응답 공통 정보 { #response-common-information }
 
 - 모든 API 요청에 **200 OK**로 응답합니다. 자세한 응답 결과는 응답 본문의 헤더를 참고합니다.
 
@@ -57,9 +62,11 @@ Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/pub
 | resultCode    | Integer | 결과 코드                            |
 | resultMessage | String  | 결과 메시지(성공 시 SUCCESS, 실패 시 오류 내용) |
 
-## 음성 인식 API
+<a id="voice-recognition-api"></a>
+## 음성 인식 API { #voice-recognition-api }
 
-### 음성 인식
+<a id="voice-recognition"></a>
+### 음성 인식 { #voice-recognition }
 - 오디오 파일의 음성 데이터를 텍스트 형태로 추출합니다.
 
 [URI]
@@ -88,6 +95,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | audio       | multipart/form–data | 필수    | 음성 파일(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                         |
 | biasingList | String[]            | 비필수   | 특정 단어나 구절을 우선적으로 인식하거나 치환하도록 돕는 파라미터. 예상되는 오인식 결과를 정정하거나, 특정 키워드를 강화하고자 할 때 사용합니다. 각 항목은 **"정답_모델인식값"** 형태로 구성됩니다. |
 
+<a id="voice-recognition-response"></a>
 #### 응답
 
 [응답 본문]
@@ -131,9 +139,11 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
 
-## 음성 인식 API (비동기)
+<a id="voice-recognition-api-asynchronous"></a>
+## 음성 인식 API (비동기) { #voice-recognition-api-asynchronous }
 
-### 음성 인식(비동기)
+<a id="voice-recognition-asynchronous"></a>
+### 음성 인식(비동기) { #voice-recognition-asynchronous }
 - 오디오 파일의 음성 데이터를 텍스트 형태로 추출합니다.(비동기)
 
 [URI]
@@ -162,6 +172,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | audioUrl    | String   | 필수    | 최대 150MB 크기의 다운로드 가능한 음성 파일 URL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                         |
 | biasingList | String[] | 비필수   | 특정 단어나 구절을 우선적으로 인식하거나 치환하도록 돕는 파라미터. 예상되는 오인식 결과를 정정하거나, 특정 키워드를 강화하고자 할 때 사용합니다. 각 항목은 **"정답_모델인식값"** 형태로 구성됩니다. |
 
+<a id="voice-recognition-asynchronous-response"></a>
 #### 응답
 
 [응답 본문]
@@ -184,7 +195,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | taskId | String | 결과 조회, 재시도를 요청할 수 있는 작업 UUID |
 
 
-### 상태 확인
+<a id="check-status"></a>
+### 상태 확인 { #check-status }
 - 요청한 작업의 현재 상태를 조회합니다.
 
 [URI]
@@ -199,6 +211,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |--------|--------|-------|-------------------------------|
 | taskId | String | 필수    | 비동기 음성 인식 API 호출 후 받은 작업 UUID |
 
+<a id="check-status-response"></a>
 #### 응답
 
 [응답 본문]
@@ -251,7 +264,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | timeslot[0].endTime   | Long     | 구간의 종료 시간(millisecond) |
 | confidence            | Double[] | 동일 인덱스의 텍스트 인식 결과 신뢰도  |
 
-### 재시도
+<a id="retry"></a>
+### 재시도 { #retry }
 - 실패한 작업의 재시도를 요청합니다.
 
 [URI]
@@ -266,6 +280,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |--------|--------|-------|-------------------------------|
 | taskId | String | 필수    | 비동기 음성 인식 API 호출 후 받은 작업 UUID |
 
+<a id="retry-response"></a>
 #### 응답
 
 [응답 본문]

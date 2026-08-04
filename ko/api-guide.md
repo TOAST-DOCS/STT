@@ -1,7 +1,12 @@
-## AI Service > Speech to Text > API 가이드
+<!-- pre-align:aligned sig=52fa21e7a0e7 -->
 
-### 음성 인식 API
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > API 가이드 { #ai-service-speech-to-text-api-guide }
 
+<a id="speech-recognition-api"></a>
+### 음성 인식 API { #speech-recognition-api }
+
+<a id="speech-recognition-api-request"></a>
 #### 요청
 
 STT API를 사용하려면 Appkey 또는 프로젝트 통합 Appkey가 필요합니다.<br/>
@@ -36,6 +41,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' 
 |-------|---------------------|--------------------------------------------|
 | audio | multipart/form–data | 음성 파일(WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
 
+<a id="speech-recognition-api-response"></a>
 #### 응답
 
 [응답 본문]

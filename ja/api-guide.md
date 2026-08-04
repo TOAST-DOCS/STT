@@ -1,7 +1,12 @@
-## AI Service > Speech to Text > APIガイド
+<!-- pre-align:aligned sig=52fa21e7a0e7 -->
 
-### 音声認識API
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > APIガイド { #ai-service-speech-to-text-api-guide }
 
+<a id="speech-recognition-api"></a>
+### 音声認識API { #speech-recognition-api }
+
+<a id="speech-recognition-api-request"></a>
 #### リクエスト
 
 STT APIを使用するにはAppkeyまたはプロジェクト統合Appkeyが必要です。<br/>
@@ -36,6 +41,7 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 |-------|---------------------|---------------------------------------|
 | audio | multipart/form–data | 音声ファイル(WAV、WebM、MP3、OGG、FLAC、AAC、AC3) |
 
+<a id="speech-recognition-api-response"></a>
 #### レスポンス
 
 [レスポンス本文]
