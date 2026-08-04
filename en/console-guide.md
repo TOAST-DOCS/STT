@@ -24,3 +24,5 @@ If you click the **Recognize Speech** button after completing the file upload or
 ### Download a File { #download-a-file }
 
 * After selecting the desired file format (JSON, TXT), you can download the speech recognition result as a file by clicking the **Download Recognition Result** button.
+
+![STT](http://static.toastoven.net/prod_speech/stt_console_ko.png)
