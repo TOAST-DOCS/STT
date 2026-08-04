@@ -16,16 +16,11 @@
 <a id="recognize-speech"></a>
 ### 音声認識 { #recognize-speech }
 
-<!-- TODO: translate body -->
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (音声合成 means 'speech synthesis'; the ko counterpart k4 is 음성 인식 ('speech recognition' = 音声認識) — semantically irreconcilable, so no match) -->
-<a id="download-a-file"></a>
-### 音声合成 { #download-a-file }
-
 ファイルをアップロードするか、音声録音を完了した後、**音声認識**ボタンをクリックすると音声ファイルの内容を認識してテキストで出力されます。
 
-![STT](http://static.toastoven.net/prod_speech/stt_console_ja.png)
+![STT](http://static.toastoven.net/prod_speech/stt_console_ko.png)
 
-### ファイルのダウンロード
+<a id="download-a-file"></a>
+### ファイルのダウンロード { #download-a-file }
 
-* ファイル形式(JSON、TXT)を選択した後、**認識結果ダウンロード**ボタンを押して合成結果をファイルでダウンロードできます。
+* 希望するファイル形式(JSON、TXT)を選択した後、**認識結果ダウンロード**ボタンを押して音声認識結果をファイルでダウンロードできます。
