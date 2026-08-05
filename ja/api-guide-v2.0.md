@@ -78,13 +78,13 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 [リクエスト本文]
 
 - 音声ファイルのバイナリデータを入力します。
-- ユーザー単語リスト(biasingList)に入力された値に基づき、「しゃだんけ」と認識された単語は「遮断機」に、「安全 運転」と認識された単語は「安全運転」に置換された結果が提供されます。
+- ユーザー単語リスト(biasingList)に入力された値に基づき、「차단계」と認識された単語は「차단기」に、「안전 운행」と認識された単語は「안전운행」に置換された結果が提供されます。
 
 ```
 curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
 -F 'biasingList="遮断機_しゃだんけ"' \
--F 'biasingList="安全運行_安全運行"' \ 
+-F 'biasingList="安全運行_安全 運行"' \ 
 -H 'Authorization: ${secretKey}'
 ```
 
@@ -156,13 +156,13 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 - オーディオファイルをダウンロード可能なURLで提供し、音声認識をリクエストします。
 - {appKey}と{secretKey}はコンソールで確認した値に変更してください。
-- ユーザー単語リスト(biasingList)に入力された値に基づき、「しゃだんけ」と認識された単語は「遮断機」に、「安全 運転」と認識された単語は「安全運転」に置換された結果が提供されます。
+- ユーザー単語リスト(biasingList)に入力された値に基づき、「차단계」と認識された単語は「차단기」に、「안전 운행」と認識された単語は「안전운행」に置換された結果が提供されます。
 
 ```
 curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async' \
 -H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
---data '{"audioUrl": "https://url/to/audioFile", "biasingList": ["遮断機_しゃだんけ", "安全運転_安全 運転"]}'
+--data '{"audioUrl": "https://url/to/audioFile", "biasingList": ["차단기_차단계", "안전운행_안전 운행"]}'
 ```
 
 [フィールド]
@@ -197,17 +197,6 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 <a id="check-status"></a>
 ### ステータス確認 { #check-status }
-
-<!-- TODO: translate body -->
-
-<a id="check-status-response"></a>
-#### レスポンス
-
-<!-- TODO: translate body -->
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (ヘルスチェック (health check) does not semantically match any ko heading; k12 is 상태 확인 (status check), a distinct concept) -->
-<a id="retry"></a>
-### ヘルスチェック { #retry }
 - リクエストしたタスクの現在の状態を照会します。
 
 [URI]
@@ -222,8 +211,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |--------|--------|--------|-------------------------------|
 | taskId | String | 必須     | 非同期音声認識APIの呼び出し後に受け取ったタスクUUID |
 
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (レスポンス under t12 has no ko counterpart because its parent t12 is itself unmatched) -->
-<a id="retry-response"></a>
+<a id="check-status-response"></a>
 #### レスポンス
 
 [レスポンス本文]
@@ -272,11 +260,12 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | fileType              | String   | 認識された音声ファイルタイプ          |
 | text                  | String[] | 認識された音声のテキスト変換結果        |
 | timeslot              | List     | 同じインデックスのテキストが認識された区間情報 |
-| timeslot[0].startTime | Long     | 区間開始時間(ミリ秒)             |
-| timeslot[0].endTime   | Long     | 区間の終了時間(ミリ秒)            |
-| confidence            | Double[] | 同じインデックスのテキスト認識結果信頼度    |
+| timeslot[0].startTime | Long     | 区間開始時間(millisecond)     |
+| timeslot[0].endTime   | Long     | 区間の終了時間(millisecond)    |
+| confidence            | Double[] | 同じインデックスのテキスト認識結果の信頼度   |
 
-### 再試行
+<a id="retry"></a>
+### 再試行 { #retry }
 - 失敗した作業の再試行をリクエストします。
 
 [URI]
@@ -291,6 +280,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |--------|--------|--------|------------------------------|
 | taskId | String | 必須     | 非同期音声認識API呼び出し後に受け取ったタスクUUID |
 
+<a id="retry-response"></a>
 #### レスポンス
 
 [レスポンス本文]
