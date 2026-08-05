@@ -288,11 +288,10 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 ```
 {
 	"header": {
-		// Omitteds
+		// Omitted
 	},
 	"result": {
 		"taskId": "c337256d-b17e-42ce-9f63-a792a05ae0ef"
 	}
 }
 ```
-
