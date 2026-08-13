@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=ee4bf6b305f0 -->
+
 <a id="ai-service-speech-to-text-api-guide"></a>
 ## AI Service > Speech to Text > API 가이드 { #ai-service-speech-to-text-api-guide }
 
