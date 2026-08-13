@@ -1,4 +1,7 @@
-## AI Service > Speech to Text > 오류 코드
+<!-- pre-align:aligned sig=b7efc86c8b7d -->
+
+<a id="ai-service-speech-to-text-error-code"></a>
+## AI Service > Speech to Text > 오류 코드 { #ai-service-speech-to-text-error-code }
 
 아래에 명시되지 않은 코드는 HTTP Response Status Code(RFC9110)를 따릅니다.
 

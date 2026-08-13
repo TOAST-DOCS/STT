@@ -1,7 +1,12 @@
-## AI Service > Speech to Text > API Guide
+<!-- pre-align:aligned sig=52fa21e7a0e7 -->
 
-### Speech Recognition API
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > API Guide { #ai-service-speech-to-text-api-guide }
 
+<a id="speech-recognition-api"></a>
+### Speech Recognition API { #speech-recognition-api }
+
+<a id="speech-recognition-api-request"></a>
 #### Request
 
 An AppKey or a Project Integrated Appkey is required to use the STT API.<br/>
@@ -36,6 +41,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v1.0/appkeys/{appKey}/stt' 
 |-------|---------------------|--------------------------------------------------|
 | audio | multipart/form–data | Voice file (WAV, WebM, MP3, OGG, FLAC, AAC, AC3) |
 
+<a id="speech-recognition-api-response"></a>
 #### Response
 
 [Response Body]

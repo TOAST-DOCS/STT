@@ -1,4 +1,7 @@
-## AI Service > Speech to Text > Error Code
+<!-- pre-align:aligned sig=b7efc86c8b7d -->
+
+<a id="ai-service-speech-to-text-error-code"></a>
+## AI Service > Speech to Text > Error Code { #ai-service-speech-to-text-error-code }
 
 Codes not specified below follow the HTTP response status codes (RFC 9110).
 

@@ -1,17 +1,21 @@
-## AI Service > Speech to Text > API Guide
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > API Guide { #ai-service-speech-to-text-api-guide }
 
 Speech to Text API v2.0 provides more varied results for voice recognition.
 Speech to Text API v2.0 significantly improves the response structure of previous verions, providing more sophisticated information needed for various post-processing and improving the user experience.
 
-## API Common Information
+<a id="api-common-information"></a>
+## API Common Information { #api-common-information }
 
-### Preliminary preparation
+<a id="preliminary-preparation"></a>
+### Preliminary preparation { #preliminary-preparation }
 
 An AppKey or a Project Integrated Appkey is required to use the Speech to Text API.<br/>
 An AppKey is a unique authentication key issued for each individual NHN Cloud service, while a Project Integrated Appkey is a common authentication key that can be shared across multiple services within a single NHN Cloud project.<br/>
 For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey). For more information on creating and using Project Integrated Appkeys, please refer to the [Project Integrated Appkey](/nhncloud/en/public-api/project-integrated-appkey).
 
-### Request Common Information
+<a id="request-common-information"></a>
+### Request Common Information { #request-common-information }
 
 - You need to verify {secretKey} to use API.
 - You need to request by inputting {secretKey} into the **Authorization** of every API request header.
@@ -22,7 +26,8 @@ For more information on checking and using Appkeys, please refer to the [Appkey]
 |---------------|-------------|------------------------------------|
 | Authorization | {secretKey} | Secret key issued from the console |
 
-### Response Common Information
+<a id="response-common-information"></a>
+### Response Common Information { #response-common-information }
 
 - Respond **200 OK** for every API request. For the detailed response result, refer to the header of the response body.
 
@@ -57,9 +62,11 @@ For more information on checking and using Appkeys, please refer to the [Appkey]
 | resultCode    | Integer | Result Code                                                     |
 | resultMessage | String  | Result Message (SUCCESS for success, error message for failure) |
 
-## Voice Recognition API
+<a id="voice-recognition-api"></a>
+## Voice Recognition API { #voice-recognition-api }
 
-### Voice Recognition
+<a id="voice-recognition"></a>
+### Voice Recognition { #voice-recognition }
 - Extract the voice data from the audio file into text format.
 
 [URI]
@@ -88,6 +95,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | audio       | multipart/form–data | Required     | Voice file (WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                                                                                                                                                                           |
 | biasingList | String[]            | Not required | Parameters that help to prioritize recognition or replacement of specific words or phrases. It's used for when you want to correct expected misrecognition results or strengthen specific keywords. Each item is structured in the form **"answer_modelRecognitionValue**. |
 
+<a id="voice-recognition-response"></a>
 #### Response
 
 [Response Body]
@@ -131,9 +139,11 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 | confidence            | Double[] | Reliability of text recognition results for the same index         |
 
 
-## Voice Recognition API (asynchronous)
+<a id="voice-recognition-api-asynchronous"></a>
+## Voice Recognition API (asynchronous) { #voice-recognition-api-asynchronous }
 
-### Voice Recognition (asynchronous)
+<a id="voice-recognition-asynchronous"></a>
+### Voice Recognition (asynchronous) { #voice-recognition-asynchronous }
 - Extract voice data from audio files in text format (asynchronous).
 
 [URI]
@@ -162,6 +172,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | audioUrl    | String    | Required     | Downloadable audio files up to 150MB in size (WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                                                                                                                                         |
 | biasingList | String[]  | Not required | Parameters that help to prioritize recognition or replacement of specific words or phrases. It's used for when you want to correct expected misrecognition results or strengthen specific keywords. Each item is structured in the form **"answer_modelRecognitionValue**. |
 
+<a id="voice-recognition-asynchronous-response"></a>
 #### Response
 
 [Response Body]
@@ -184,7 +195,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | taskId | String | Task UUID that can request results, retries |
 
 
-### Check Status
+<a id="check-status"></a>
+### Check Status { #check-status }
 - Retrieve the current status of the task requested.
 
 [URI]
@@ -199,6 +211,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |--------|--------|-----------|--------------------------------------------------------------------------|
 | taskId | String | Required  | Task UUID received after calling the asynchronous speech recognition API |
 
+<a id="check-status-response"></a>
 #### Response
 
 [Response Body]
@@ -251,7 +264,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 | timeslot[0].endTime   | Long     | Section end time (millisecond)                                     |
 | confidence            | Double[] | Reliability of text recognition results for the same index         |
 
-### Retry
+<a id="retry"></a>
+### Retry { #retry }
 - Request to retry failed task.
 
 [URI]
@@ -266,6 +280,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 |--------|--------|----------|--------------------------------------------------------------------------|
 | taskId | String | Required | Task UUID received after calling the asynchronous speech recognition API |
 
+<a id="retry-response"></a>
 #### Response
 
 [Response Body]
@@ -273,11 +288,10 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 ```
 {
 	"header": {
-		// Omitteds
+		// Omitted
 	},
 	"result": {
 		"taskId": "c337256d-b17e-42ce-9f63-a792a05ae0ef"
 	}
 }
 ```
-

@@ -1,11 +1,16 @@
-## AI Service > Speech to Text > APIガイド
+<!-- pre-align:aligned sig=c189227c350c -->
+
+<a id="ai-service-speech-to-text-api-guide"></a>
+## AI Service > Speech to Text > APIガイド { #ai-service-speech-to-text-api-guide }
 
 Speech to Text API v2.1は、より豊富な音声認識結果を提供します。
 Speech to Text API v2.1は、旧バージョンのレスポンス構造を大幅に改善し、多様な後処理やユーザーエクスペリエンスの向上に必要な情報を、より精巧に提供します。
 
-## API共通情報
+<a id="api-common-information"></a>
+## API共通情報 { #api-common-information }
 
-### 事前準備
+<a id="preliminary-preparation"></a>
+### 事前準備 { #preliminary-preparation }
 
 Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ko/public-api/user-access-key-token)をご参照ください。
 
@@ -15,7 +20,8 @@ Speech to Text APIは、認証/認可のためにUser Access Keyトークンを�
 |---------------------|--------------------------------|----------------------|
 | X-NHN-Authorization | Bearer {User Access Key Token} | User Access Key トークン |
 
-### レスポンス共通情報
+<a id="response-common-information"></a>
+### レスポンス共通情報 { #response-common-information }
 
 - 全てのAPIリクエストに **200 OK**でレスポンスします。詳細なレスポンス結果はレスポンス本文のヘッダを参照してください。
 
@@ -50,9 +56,11 @@ Speech to Text APIは、認証/認可のためにUser Access Keyトークンを�
 | resultCode    | Integer | 結果コード                          |
 | resultMessage | String  | 結果メッセージ(成功時はSUCCESS、失敗時はエラー内容) |
 
-## 音声認識API
+<a id="voice-recognition-api"></a>
+## 音声認識API { #voice-recognition-api }
 
-### 音声認識
+<a id="voice-recognition"></a>
+### 音声認識 { #voice-recognition }
 - オーディオファイルの音声データをテキスト形式で抽出します。
 
 [URI]
@@ -81,6 +89,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt' 
 | audio       | multipart/form–data | 必須     | 音声ファイル(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                |
 | biasingList | String[]            | 任意     | 特定の単語やフレーズを優先的に認識または置換するためのパラメータ。想定される誤認識の結果を訂正したり、特定のキーワードを強化したりする場合に使用します。各項目は**「正解_モデル認識値」**の形式で構成されます。 |
 
+<a id="voice-recognition-response"></a>
 #### レスポンス
 
 [レスポンス本文]
@@ -124,9 +133,11 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt' 
 | confidence            | Double[] | 同じインデックスのテキスト認識結果の信頼度   |
 
 
-## 音声認識API (非同期)
+<a id="voice-recognition-api-asynchronous"></a>
+## 音声認識API (非同期) { #voice-recognition-api-asynchronous }
 
-### 音声認識(非同期)
+<a id="voice-recognition-asynchronous"></a>
+### 音声認識(非同期) { #voice-recognition-asynchronous }
 - オーディオファイルの音声データをテキスト形式で抽出します。(非同期)
 
 [URI]
@@ -155,6 +166,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 | audioUrl    | String   | 必須     | 最大150MBサイズのダウンロード可能な音声ファイルURL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                  |
 | biasingList | String[] | 任意     | 特定の単語やフレーズを優先的に認識または置換するためのパラメータ。想定される誤認識の結果を訂正したり、特定のキーワードを強化したりする場合に使用。各項目は**「正解_モデル認識値」**の形式で構成。 |
 
+<a id="voice-recognition-asynchronous-response"></a>
 #### レスポンス
 
 [レスポンス本文]
@@ -177,7 +189,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 | taskId | String | 結果照会、再試行をリクエストできるタスクUUID |
 
 
-### ヘルスチェック
+<a id="check-status"></a>
+### ヘルスチェック { #check-status }
 - リクエストしたタスクの現在の状態を照会します。
 
 [URI]
@@ -192,6 +205,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 |--------|--------|-------|-------------------------------|
 | taskId | String | 必須     | 非同期音声認識APIの呼び出し後に受け取ったタスクUUID |
 
+<a id="check-status-response"></a>
 #### レスポンス
 
 [レスポンス本文]
@@ -244,7 +258,8 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 | timeslot[0].endTime   | Long     | 区間の終了時間(ミリ秒)            |
 | confidence            | Double[] | 同じインデックスのテキスト認識結果信頼度    |
 
-### 再試行
+<a id="retry"></a>
+### 再試行 { #retry }
 - 失敗した作業の再試行をリクエストします。
 
 [URI]
@@ -259,6 +274,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/a
 |--------|--------|--------|------------------------------|
 | taskId | String | 必須     | 非同期音声認識API呼び出し後に受け取ったタスクUUID |
 
+<a id="retry-response"></a>
 #### レスポンス
 
 [レスポンス本文]
