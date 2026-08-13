@@ -1,8 +1,10 @@
+<!-- pre-align:aligned sig=c189227c350c -->
+
 <a id="ai-service-speech-to-text-api-guide"></a>
 ## AI Service > Speech to Text > APIガイド { #ai-service-speech-to-text-api-guide }
 
-Speech to Text API v2.0は、より豊富な音声認識結果を提供します。
-Speech to Text API v2.0は、旧バージョンのレスポンス構造を大幅に改善し、多様な後処理やユーザーエクスペリエンスの向上に必要な情報を、より精巧に提供します。
+Speech to Text API v2.1は、より豊富な音声認識結果を提供します。
+Speech to Text API v2.1は、旧バージョンのレスポンス構造を大幅に改善し、多様な後処理やユーザーエクスペリエンスの向上に必要な情報を、より精巧に提供します。
 
 <a id="api-common-information"></a>
 ## API共通情報 { #api-common-information }
@@ -10,21 +12,13 @@ Speech to Text API v2.0は、旧バージョンのレスポンス構造を大幅
 <a id="preliminary-preparation"></a>
 ### 事前準備 { #preliminary-preparation }
 
-Speech to Text APIを使用するにはAppkeyまたはプロジェクト統合Appkeyが必要です。<br/>
-Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、プロジェクト統合Appkeyは、NHN Cloudの1つのプロジェクト内の複数のサービスに対して共通で使用できる認証キーです。<br/>
-Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。プロジェクト統合Appkeyの作成及び使用に関する詳細は、[プロジェクト統合Appkey](/nhncloud/ja/public-api/project-integrated-appkey)を参照してください。
-
-<a id="request-common-information"></a>
-### リクエスト共通情報 { #request-common-information }
-
-- APIを使用するには{secretKey}認証処理が必要です。
-- 全てのAPIリクエストヘッダの **Authorization**に{secretKey}を入れてリクエストする必要があります。
+Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ko/public-api/user-access-key-token)をご参照ください。
 
 [リクエストヘッダ]
 
-| 名前            | 値           | 説明            |
-|---------------|-------------|---------------|
-| Authorization | {secretKey} | コンソールで発行した秘密鍵 |
+| 名前                  | 値                              | 説明                   |
+|---------------------|--------------------------------|----------------------|
+| X-NHN-Authorization | Bearer {User Access Key Token} | User Access Key トークン |
 
 <a id="response-common-information"></a>
 ### レスポンス共通情報 { #response-common-information }
@@ -73,25 +67,25 @@ Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-
 
 | メソッド | URI                                                              |
 |------|------------------------------------------------------------------|
-| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt |
+| POST | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt |
 
 [リクエスト本文]
 
 - 音声ファイルのバイナリデータを入力します。
-- ユーザー単語リスト(biasingList)に入力された値に基づき、「차단계」と認識された単語は「차단기」に、「안전 운행」と認識された単語は「안전운행」に置換された結果が提供されます。
+- ユーザー単語リスト(biasingList)に入力された値に基づき、「しゃだんけ」と認識された単語は「遮断機」に、「安全 運転」と認識された単語は「安全運転」に置換された結果が提供されます。
 
 ```
-curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt' \
 -F 'audio=@sample.mp3' \
 -F 'biasingList="遮断機_しゃだんけ"' \
--F 'biasingList="安全運行_安全 運行"' \ 
--H 'Authorization: ${secretKey}'
+-F 'biasingList="安全運行_安全運行"' \ 
+-H 'X-NHN-Authorization: Bearer ${User Access Key Token}'
 ```
 
 [フィールド]
 
 | 名前          | タイプ                 | 必須かどうか | 説明                                                                                                         |
-|-------------|---------------------|--------|------------------------------------------------------------------------------------------------------------|
+|-------------|---------------------|-------|--------------------------------------------------------------------------------------------------------------------|
 | audio       | multipart/form–data | 必須     | 音声ファイル(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                                                |
 | biasingList | String[]            | 任意     | 特定の単語やフレーズを優先的に認識または置換するためのパラメータ。想定される誤認識の結果を訂正したり、特定のキーワードを強化したりする場合に使用します。各項目は**「正解_モデル認識値」**の形式で構成されます。 |
 
@@ -107,7 +101,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
         "resultMessage": "Success"
     },
     "result": {
-        "inputLength": 220.0,
+        "inputLength": 220.1,
         "fileType": "mp3float",
         "text": [
             "レスポンステキストの例です",
@@ -150,25 +144,25 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt' 
 
 | メソッド | URI                                                                    |
 |------|------------------------------------------------------------------------|
-| POST | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async |
+| POST | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async |
 
 [リクエスト本文]
 
 - オーディオファイルをダウンロード可能なURLで提供し、音声認識をリクエストします。
-- {appKey}と{secretKey}はコンソールで確認した値に変更してください。
-- ユーザー単語リスト(biasingList)に入力された値に基づき、「차단계」と認識された単語は「차단기」に、「안전 운행」と認識された単語は「안전운행」に置換された結果が提供されます。
+- {appKey}はコンソールで確認した値に変更し、{User Access Key Token}は発行されたUser Access Keyトークンに変更してください。
+- ユーザー単語リスト(biasingList)に入力された値に基づき、「しゃだんけ」と認識された単語は「遮断機」に、「安全 運転」と認識された単語は「安全運転」に置換された結果が提供されます。
 
 ```
-curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async' \
--H 'Authorization: {secretKey}' \
+curl -X POST 'https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async' \
+-H 'X-NHN-Authorization: Bearer ${User Access Key Token}' \
 -H 'Content-Type: application/json' \
---data '{"audioUrl": "https://url/to/audioFile", "biasingList": ["차단기_차단계", "안전운행_안전 운행"]}'
+--data '{"audioUrl": "https://url/to/audioFile", "biasingList": ["遮断機_しゃだんけ", "安全運転_安全 運転"]}'
 ```
 
 [フィールド]
 
 | 名前          | タイプ      | 必須かどうか | 説明                                                                                                  |
-|-------------|----------|--------|-----------------------------------------------------------------------------------------------------|
+|-------------|----------|-------|--------------------------------------------------------------------------------------------------------------|
 | audioUrl    | String   | 必須     | 最大150MBサイズのダウンロード可能な音声ファイルURL(WAV, WebM, MP3, OGG, FLAC, AAC, AC3)                                  |
 | biasingList | String[] | 任意     | 特定の単語やフレーズを優先的に認識または置換するためのパラメータ。想定される誤認識の結果を訂正したり、特定のキーワードを強化したりする場合に使用。各項目は**「正解_モデル認識値」**の形式で構成。 |
 
@@ -196,19 +190,19 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 
 <a id="check-status"></a>
-### ステータス確認 { #check-status }
+### ヘルスチェック { #check-status }
 - リクエストしたタスクの現在の状態を照会します。
 
 [URI]
 
 | メソッド | URI                                                                                    |
 |------|----------------------------------------------------------------------------------------|
-| GET  | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/status |
+| GET  | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async/{taskId}/status |
 
 [フィールド]
 
 | 名前     | タイプ    | 必須かどうか | 説明                            |
-|--------|--------|--------|-------------------------------|
+|--------|--------|-------|-------------------------------|
 | taskId | String | 必須     | 非同期音声認識APIの呼び出し後に受け取ったタスクUUID |
 
 <a id="check-status-response"></a>
@@ -226,7 +220,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
     "taskId": "d3dc604c-ebef-411a-959e-16f99770f2cf",
     "taskStatus": "COMPLETED",
     "result": {
-        "inputLength": 220.0,
+        "inputLength": 220.1,
         "fileType": "mp3float",
         "text": [
             "レスポンステキストの例です",
@@ -255,14 +249,14 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 [Result]
 
 | 名前                    | タイプ      | 説明                      |
-|-----------------------|----------|-------------------------|
+|-----------------------|----------|------------------------|
 | inputLength           | Double   | 認識された音声ファイルの長さ(単位：秒)    |
 | fileType              | String   | 認識された音声ファイルタイプ          |
 | text                  | String[] | 認識された音声のテキスト変換結果        |
 | timeslot              | List     | 同じインデックスのテキストが認識された区間情報 |
-| timeslot[0].startTime | Long     | 区間開始時間(millisecond)     |
-| timeslot[0].endTime   | Long     | 区間の終了時間(millisecond)    |
-| confidence            | Double[] | 同じインデックスのテキスト認識結果の信頼度   |
+| timeslot[0].startTime | Long     | 区間開始時間(ミリ秒)             |
+| timeslot[0].endTime   | Long     | 区間の終了時間(ミリ秒)            |
+| confidence            | Double[] | 同じインデックスのテキスト認識結果信頼度    |
 
 <a id="retry"></a>
 ### 再試行 { #retry }
@@ -272,7 +266,7 @@ curl -X POST 'https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/a
 
 | メソッド | URI                                                                                   |
 |------|---------------------------------------------------------------------------------------|
-| GET  | https://api-speech.nhncloudservice.com/v2.0/appkeys/{appKey}/stt/async/{taskId}/retry |
+| GET  | https://api-speech.nhncloudservice.com/v2.1/appkeys/{appKey}/stt/async/{taskId}/retry |
 
 [フィールド]
 
