@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=7021c27b1465 -->
+
 <a id="ai-service-speech-to-text-console-user-guide"></a>
 ## AI Service > Speech to Text > Console User Guide { #ai-service-speech-to-text-console-user-guide }
 
