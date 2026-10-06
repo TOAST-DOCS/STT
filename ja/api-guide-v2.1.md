@@ -12,7 +12,7 @@ Speech to Text API v2.1は、旧バージョンのレスポンス構造を大幅
 <a id="preliminary-preparation"></a>
 ### 事前準備 { #preliminary-preparation }
 
-Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ko/public-api/user-access-key-token)をご参照ください。
+Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ja/public-api/user-access-key-token/)をご参照ください。
 
 [リクエストヘッダ]
 
