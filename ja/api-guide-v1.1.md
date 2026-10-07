@@ -9,7 +9,7 @@
 <a id="speech-recognition-api-request"></a>
 #### リクエスト
 
-Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ko/public-api/user-access-key-token)をご参照ください。
+Speech to Text APIは、認証/認可のためにUser Access Keyトークンを使用します。User Access Keyトークンは、User Access Keyを基に発行されるBearerタイプの一時的なアクセストークンです。User Access Keyトークンの発行及び使用に関する詳細については、[User Access Key トークン](/nhncloud/ja/public-api/user-access-key-token/)をご参照ください。
 
 [URI]
 
