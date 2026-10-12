@@ -20,7 +20,7 @@
 
 ファイルをアップロードするか、音声録音を完了した後、**音声認識**ボタンをクリックすると音声ファイルの内容を認識してテキストで出力されます。
 
-![STT](http://static.toastoven.net/prod_speech/stt_console_ko.png)
+![STT](http://static.toastoven.net/prod_speech/stt_console_ja.png)
 
 <a id="download-a-file"></a>
 ### ファイルのダウンロード { #download-a-file }
